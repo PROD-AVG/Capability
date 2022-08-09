@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_ux_event">
+    <sys_ux_event action="INSERT_OR_UPDATE">
+        <description/>
+        <event_name>MODAL_SELECTED_RELAY_9cbf02b262899590e03a254e6d18df60</event_name>
+        <interfaces/>
+        <label>Open or close modal dialog Relay (Security and login Default)</label>
+        <props>[{"name":"modalId","fieldType":"string","interfaceApiName":"global.modal","label":"Modal"},{"name":"showModal","fieldType":"boolean","interfaceApiName":null,"label":"Open modal dialog"},{"name":"displayOptions","fieldType":"json","interfaceApiName":null,"label":"Display options (advanced)"},{"name":"bare","fieldType":"boolean","interfaceApiName":"global.modal","label":"Use bare modal"}]</props>
+        <required_translations/>
+        <schema_version>1.0.0</schema_version>
+        <sys_class_name>sys_ux_event</sys_class_name>
+        <sys_created_by>system</sys_created_by>
+        <sys_created_on>2022-08-05 08:28:16</sys_created_on>
+        <sys_id>1cbf02b21489959026243a31361d6060</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>Open or close modal dialog Relay (Security and login Default)</sys_name>
+        <sys_package display_value="Capability" source="x_292088_capabil_0">dd08f9b007bc11500eb2f61d7c1ed0e9</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Capability">dd08f9b007bc11500eb2f61d7c1ed0e9</sys_scope>
+        <sys_update_name>sys_ux_event_1cbf02b21489959026243a31361d6060</sys_update_name>
+        <sys_updated_by>system</sys_updated_by>
+        <sys_updated_on>2022-08-05 08:28:16</sys_updated_on>
+    </sys_ux_event>
+</record_update>
