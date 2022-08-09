@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_ux_composite_data_template_predicate">
+    <sys_ux_composite_data_template_predicate action="INSERT_OR_UPDATE">
+        <active>true</active>
+        <condition/>
+        <custom_condition/>
+        <custom_field_list/>
+        <field_list>due_date,short_description,state,number</field_list>
+        <name>My Request - task predicate</name>
+        <order/>
+        <predicate_bundle display_value="My request - task bundle">94bf02b2e789959054f2e5395a2a0c64</predicate_bundle>
+        <required_roles/>
+        <sys_class_name>sys_ux_composite_data_template_predicate</sys_class_name>
+        <sys_created_by>system</sys_created_by>
+        <sys_created_on>2022-08-05 08:28:07</sys_created_on>
+        <sys_id>5cbf02b2d38995908b4086e4a60b3162</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>My Request - task predicate</sys_name>
+        <sys_package display_value="Capability" source="x_292088_capabil_0">dd08f9b007bc11500eb2f61d7c1ed0e9</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Capability">dd08f9b007bc11500eb2f61d7c1ed0e9</sys_scope>
+        <sys_update_name>sys_ux_composite_data_template_predicate_5cbf02b2d38995908b4086e4a60b3162</sys_update_name>
+        <sys_updated_by>system</sys_updated_by>
+        <sys_updated_on>2022-08-05 08:28:07</sys_updated_on>
+        <table>task</table>
+        <ux_template display_value="Item produced template">18bf02b299899590c1c0ec60a27aa363</ux_template>
+    </sys_ux_composite_data_template_predicate>
+</record_update>
