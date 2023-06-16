@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sp_dependency">
+    <sp_dependency action="INSERT_OR_UPDATE">
+        <module/>
+        <name>OwlCarousel</name>
+        <page_load>false</page_load>
+        <sp_portals/>
+        <sys_class_name>sp_dependency</sys_class_name>
+        <sys_created_by>HTRAN204</sys_created_by>
+        <sys_created_on>2023-06-05 06:35:50</sys_created_on>
+        <sys_id>3429dba4079365100eb2f61d7c1ed0b9</sys_id>
+        <sys_mod_count>2</sys_mod_count>
+        <sys_name>OwlCarousel</sys_name>
+        <sys_package display_value="Capability" source="x_292088_capabil_0">dd08f9b007bc11500eb2f61d7c1ed0e9</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Capability">dd08f9b007bc11500eb2f61d7c1ed0e9</sys_scope>
+        <sys_update_name>sp_dependency_3429dba4079365100eb2f61d7c1ed0b9</sys_update_name>
+        <sys_updated_by>HTRAN210</sys_updated_by>
+        <sys_updated_on>2023-06-09 13:59:15</sys_updated_on>
+    </sp_dependency>
+</record_update>
