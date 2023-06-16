@@ -1,0 +1,500 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sp_widget">
+    <sp_widget action="INSERT_OR_UPDATE">
+        <category>custom</category>
+        <client_script><![CDATA[function($rootScope, $scope, $sce) {
+	/* widget controller */
+	var c = this;
+
+	c.toggle = function() {
+		$('header').toggle();
+		$('footer').toggle();
+	}
+
+	c.trustHTML = function(html) {
+		return $sce.trustAsHtml(html);
+	};
+
+	c.setActive = function(index) {
+		var tabs = document.querySelectorAll('.tabs h3');
+		var tabContents = document.querySelectorAll('.tab-content');
+
+		//var wrappedTabs = angular.element(tabs);
+		var tabCaptainProfile = angular.element(tabs[0]);
+		var contentCaptainProfile = angular.element(tabContents[0]);
+		var tabCapability = angular.element(tabs[1]);
+		var contentCapability = angular.element(tabContents[1]);
+		var tabViceCaptain = angular.element(tabs[2]);
+		var contentViceCaptain = angular.element(tabContents[2]);
+
+		tabCaptainProfile.addClass('inactive');
+		contentCaptainProfile.addClass('inactive');
+		tabCapability.addClass('inactive');
+		contentCapability.addClass('inactive');
+		tabViceCaptain.addClass('inactive');
+		contentViceCaptain.addClass('inactive');
+
+		if (index == 0) {
+			tabCaptainProfile.removeClass('inactive');
+			contentCaptainProfile.removeClass('inactive');
+		}
+		if (index == 1) {
+			tabCapability.removeClass('inactive');
+			contentCapability.removeClass('inactive');
+		}
+		if (index == 2) {
+			tabViceCaptain.removeClass('inactive');
+			contentViceCaptain.removeClass('inactive');
+		}
+	}
+
+}]]></client_script>
+        <controller_as>c</controller_as>
+        <css>@import url("https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;800;900&amp;display=swap")&#13;
+&#13;
+* {&#13;
+    box-sizing: border-box;&#13;
+    font-family: 'Outfit', sans-serif;&#13;
+}&#13;
+&#13;
+*::before {&#13;
+  display:none;&#13;
+}&#13;
+&#13;
+.tooltip {&#13;
+  position: relative;&#13;
+  display: inline-block;&#13;
+  border-bottom: 1px dotted black; /* If you want dots under the hoverable text */&#13;
+}&#13;
+&#13;
+&#13;
+&#13;
+&#13;
+.container::before {&#13;
+  display: none;&#13;
+}&#13;
+.main-container {&#13;
+  	color: white;&#13;
+    width: 100%;&#13;
+  	padding: 0;&#13;
+    height: 100vh;&#13;
+    min-width: 30em;&#13;
+    /* transform: translate(-50%, -50%); */&#13;
+    /* top: 50%;&#13;
+    left: 50%; */&#13;
+    display: flex;&#13;
+    grid-template-columns: 9fr 0.8fr;&#13;
+  	transition: 0.3s;&#13;
+}&#13;
+.tabs {&#13;
+    background-color: rgba(121, 206, 116, 0.65); &#13;
+  	width: 5vw;&#13;
+    display: flex;&#13;
+    flex-direction: column;&#13;
+    justify-content: stretch;&#13;
+  	transition: 0.3s;&#13;
+}&#13;
+.tab-title {&#13;
+    height: 33.33vh;&#13;
+    margin: 0;&#13;
+    /* width: 100%; */&#13;
+    display: grid;&#13;
+    place-items: center;&#13;
+    font-size: 1.5vw;&#13;
+    font-weight: 600;&#13;
+  	font-family: 'Outfit', sans-serif;&#13;
+    cursor: pointer;&#13;
+    writing-mode: vertical-rl;&#13;
+  	transition: 0.3s;&#13;
+}&#13;
+.tab-title:hover {&#13;
+  border-inline: 1.2vw solid rgba(0, 0, 0, 0.8);&#13;
+}&#13;
+.tab-content {&#13;
+    width: 65%;&#13;
+    padding: 5vw 0 2vw 8vw;&#13;
+  	transition: 1s;&#13;
+}&#13;
+&#13;
+.tabs-content {&#13;
+  width: 100%;&#13;
+  height: 100vh;&#13;
+  background-repeat: no-repeat;&#13;
+  background-size: contain, cover;&#13;
+  background-color: #464646;&#13;
+  background-position: 40vw 0vw, left;&#13;
+  background-blend-mode: normal, multiply;&#13;
+  animation: wiggle 15s ease-in-out infinite;&#13;
+}&#13;
+&#13;
+@keyframes wiggle {&#13;
+  0% {&#13;
+      background-position: 40vw 0vw, left;&#13;
+  }&#13;
+&#13;
+  10% {&#13;
+      background-position: 38vw 0.5vw, left;&#13;
+  }&#13;
+&#13;
+  20% {&#13;
+      background-position: 41vw 1vw, left;&#13;
+  }&#13;
+&#13;
+  30% {&#13;
+      background-position: 39vw 2vw, left;&#13;
+  }&#13;
+&#13;
+  40% {&#13;
+      background-position: 39vw 1vw, left;&#13;
+  }&#13;
+&#13;
+  50% {&#13;
+      background-position: 42vw 2vw, left;&#13;
+  }&#13;
+&#13;
+  60% {&#13;
+      background-position: 40vw 2vw, left;&#13;
+  }&#13;
+&#13;
+  70% {&#13;
+      background-position: 40vw 0vw, left;&#13;
+  }&#13;
+&#13;
+  80% {&#13;
+      background-position: 41vw 1vw, left;&#13;
+  }&#13;
+&#13;
+  90% {&#13;
+      background-position: 38vw 1vw, left;&#13;
+  }&#13;
+&#13;
+  100% {&#13;
+      background-position: 40vw 0vw, left;&#13;
+  }&#13;
+}&#13;
+&#13;
+.tabs-content .inactive {&#13;
+    display: none;&#13;
+  	transition: 0.5s;&#13;
+}&#13;
+&#13;
+.tabs .inactive {&#13;
+  transition: 0.5s;&#13;
+    background-color: #062D43;&#13;
+}&#13;
+&#13;
+.cap-container {&#13;
+    display: flex;&#13;
+  	transition: 0.3s;&#13;
+}&#13;
+.cap-container-right {&#13;
+    margin: auto;&#13;
+    margin-left: 1rem;&#13;
+  	transition: 0.3s;&#13;
+}&#13;
+.cap-img {&#13;
+    height: 9vw;&#13;
+    width: 9vw;&#13;
+    border-radius: 50%;&#13;
+    border: 5px solid white;&#13;
+  	transition: 0.3s;&#13;
+}&#13;
+&#13;
+.cap-name {&#13;
+  margin-left: 1rem;&#13;
+    font-size: 1.8vw;&#13;
+    font-weight: 700;&#13;
+  	font-family: 'Outfit', sans-serif;&#13;
+  	transition: 0.3s;&#13;
+}&#13;
+.cap-title {&#13;
+    margin-left: 1rem;&#13;
+    font-size: 1.6vw;&#13;
+  	font-family: 'Outfit', sans-serif;&#13;
+  	transition: 0.3s;&#13;
+}&#13;
+.line {&#13;
+    margin-bottom: 10px;&#13;
+    width: 80%;&#13;
+}&#13;
+&#13;
+.tab-info {&#13;
+  width:80%;&#13;
+    font-size: 18px;&#13;
+  	font-family: 'Outfit', sans-serif;&#13;
+}&#13;
+.details {&#13;
+    margin: 1.5vw 0;&#13;
+  	transition: 0.3s;&#13;
+}&#13;
+.cap-email-phone {&#13;
+    display: flex;&#13;
+    /* width: 90%; */&#13;
+    justify-content: space-between;&#13;
+}&#13;
+.field-name {&#13;
+    color: gray;&#13;
+    font-weight: 200;&#13;
+    font-size: 1.3vw;&#13;
+  	font-family: 'Outfit', sans-serif;&#13;
+}&#13;
+.field-value {&#13;
+    font-weight: 600;&#13;
+    font-size: 1.2vw;&#13;
+	font-family: 'Outfit', sans-serif;&#13;
+  	text-align: justify;&#13;
+}&#13;
+&#13;
+.vice-cap-title{&#13;
+  &#13;
+}&#13;
+&#13;
+.vice-cap-content {&#13;
+  display: flex;&#13;
+  flex-direction: row;&#13;
+  flex-wrap: wrap;&#13;
+  transition: 0.3s;&#13;
+  justify-content: space-between;&#13;
+}&#13;
+&#13;
+.vice-cap-info {&#13;
+  font-size: 18px;&#13;
+  font-family: 'Outfit', sans-serif;&#13;
+}&#13;
+&#13;
+.cap-contact {&#13;
+    display: flex;&#13;
+    //width: 80%;&#13;
+    justify-content: space-around;&#13;
+    padding: 10px 0 10px 10px;&#13;
+}&#13;
+.contact {&#13;
+    // display: flex;&#13;
+    // justify-content: center;&#13;
+    // width: 110px;&#13;
+    // /* height: 40px; */&#13;
+    // background: white;&#13;
+    // border-radius: 60px;&#13;
+}&#13;
+.icon-contact {&#13;
+    margin: 1rem;&#13;
+    width: 2.7vw;&#13;
+    height: 2.7vw;&#13;
+  	filter: grayscale(1);&#13;
+  	transition: 0.5s;&#13;
+}&#13;
+.icon-text {&#13;
+    margin: 10px 10px 10px 4px;&#13;
+    font-weight: 50;&#13;
+    font-size: 0.8vw;&#13;
+	font-family: 'Outfit', sans-serif;  &#13;
+}&#13;
+.teams {&#13;
+    color: #7C84EC;&#13;
+}&#13;
+.teams-hover:hover &gt; .icon-contact {&#13;
+  filter: grayscale(0);&#13;
+  margin: 0.5rem;&#13;
+  width: 3.2vw;&#13;
+  height: 3.2vw;&#13;
+}&#13;
+.outlook-hover:hover &gt; .icon-contact {&#13;
+  filter: grayscale(0);&#13;
+  margin: 0.5rem;&#13;
+  width: 3.2vw;&#13;
+  height: 3.2vw;&#13;
+}&#13;
+.outlook {&#13;
+    color: #006EC4;&#13;
+}&#13;
+&#13;
+.capability-title {&#13;
+    font-size: 40px;&#13;
+    font-weight: 800;&#13;
+  	font-family: 'Outfit', sans-serif;&#13;
+}</css>
+        <data_table>sp_instance</data_table>
+        <demo_data/>
+        <description/>
+        <docs/>
+        <field_list/>
+        <has_preview>false</has_preview>
+        <id>avenger-main</id>
+        <internal>false</internal>
+        <link><![CDATA[function link(scope, element, attrs, controller, document) {
+	
+}]]></link>
+        <name>Avenger Main</name>
+        <option_schema/>
+        <public>false</public>
+        <roles/>
+        <script><![CDATA[(function() {
+    data.mode = $sp.getParameter('mode');
+    data.capSysId = $sp.getParameter('cap_id');
+    data.introductionWidget = $sp.getWidget('avengers_mode_cap_intro_section');
+    if (data.capSysId) {
+        var cap = new GlideRecord('cmdb_ci_business_capability');
+        cap.get(data.capSysId);
+
+        var mainDataObj = {};
+
+        if (cap.isValidRecord()) {
+            data.capabilityName = cap.name.toString();
+            data.capabilitySubLead = cap.x_292088_capabil_0_sub_leads;
+            data.capabilityDescription = cap.short_description.toString();
+			data.capabilityIntroduction = cap.getValue('u_short_introduction');
+            data.capabilityBackground = cap.u_background_hero.getDisplayValue();
+            data.captainRepresentativeHero = cap. u_representative_hero.getDisplayValue();
+            data.captainBio = cap.u_short_biography.toString();
+            data.captainSysId = cap.x_292088_capabil_0_cap_lead.toString();
+            data.captainAvatar = cap.x_292088_capabil_0_cap_lead.avatar.getDisplayValue();
+			data.captainSubLead = [];
+            var listSubLead = cap.x_292088_capabil_0_sub_leads.toString().split(',');
+
+            if (!data.captainAvatar) { //If the current cap lead does not have an avatar then display the default snow user avatar
+                data.captainAvatar = gs.getProperty('x_292088_capabil_0.dxc.capability.default-user-avatar');
+            }
+
+            if (data.captainSysId) {
+                getCaptainInfo(data.captainSysId, 'captain');
+            }
+
+            if (listSubLead) {
+                for (var i = 0; i < listSubLead.length; i++) {
+                    getCaptainInfo(listSubLead[i], 'sub');
+                }
+			}
+        }
+
+    }
+
+    function getCaptainInfo(sysid, type) {
+        var grUser = new GlideRecord('sys_user');
+        grUser.get(sysid);
+
+        if (grUser.isValidRecord()) {
+            if (type == 'captain') {
+                data.captainName = grUser.name.toString();
+                data.captainEmail = grUser.email.toString();
+                data.captainPhone = grUser.mobile_phone.toString();
+            }
+
+            if (type == 'sub') {
+                var subLead = {};
+                subLead.name = grUser.name.toString();
+                subLead.email = grUser.email.toString();
+                subLead.avatar = grUser.avatar.getDisplayValue();
+				if (!subLead.avatar) { 
+					subLead.avatar = gs.getProperty('x_292088_capabil_0.dxc.capability.default-user-avatar');
+				}
+				data.captainSubLead.push(subLead);
+            }
+
+        }
+    }
+
+})();]]></script>
+        <servicenow>false</servicenow>
+        <sys_class_name>sp_widget</sys_class_name>
+        <sys_created_by>DTRAN88</sys_created_by>
+        <sys_created_on>2023-06-06 08:02:55</sys_created_on>
+        <sys_id>11d6fcc9079be9100eb2f61d7c1ed0bc</sys_id>
+        <sys_mod_count>135</sys_mod_count>
+        <sys_name>Avenger Main</sys_name>
+        <sys_package display_value="Capability" source="x_292088_capabil_0">dd08f9b007bc11500eb2f61d7c1ed0e9</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Capability">dd08f9b007bc11500eb2f61d7c1ed0e9</sys_scope>
+        <sys_update_name>sp_widget_11d6fcc9079be9100eb2f61d7c1ed0bc</sys_update_name>
+        <sys_updated_by>HTRAN210</sys_updated_by>
+        <sys_updated_on>2023-06-12 17:11:59</sys_updated_on>
+        <template><![CDATA[<div class="container main-container" ng-if="data.mode == 'avenger' && !data.capSysId">
+  <sp-widget widget="data.introductionWidget"/>
+</div> 
+<div class="container main-container" ng-if="data.mode == 'avenger' && data.capSysId">
+  <div class="tabs-content" style="background-image: url('{{data.captainRepresentativeHero}}'), url('{{data.capabilityBackground}}');">
+    <!-- Profile -->
+    <div class="tab-content captain-profile-content">
+      <div class="cap-container">
+        <div class="cap-container-left">
+          <img src="{{data.captainAvatar}}" alt="cap avatar" class="cap-img">
+        </div>
+        <div class="cap-container-right">
+          <div class="cap-name">{{data.captainName}}</div>
+          <div class="cap-title">Captain {{data.capabilityName}}</div>
+          <div class="cap-contact">
+            <a class="contact teams-hover" href="https://teams.microsoft.com/l/chat/0/0?users={{data.captainEmail}}" target="_blank">
+              <img class="icon-contact" src="Teams-icon.png" alt="teams-icon">
+              <!-- <div class="icon-text teams">Teams<br>Chat</div> -->
+            </a>
+            <a class="contact outlook-hover" href="mailto:{{data.captainEmail}}">
+              <img class="icon-contact" src="Outlook-icon.png" alt="outlook-icon">
+              <!-- <div class="icon-text outlook">Outlook<br>Email</div> -->
+            </a>
+          </div>
+        </div>
+      </div>
+      <div>
+        <img class="line" src="line.png" alt="line">
+      </div>
+      <div class="tab-info">
+        <div class="cap-email-phone">
+          <div class="cap-email details">
+            <div class="field-name">Email</div>
+            <div class="field-value">{{data.captainEmail}}</div>
+          </div>
+          <div class="cap-phone details">
+            <div class="field-name">Phone</div>
+            <div class="field-value">{{data.captainPhone}}</div>
+          </div>
+        </div>
+        <div class="cap-bio details">
+          <div class="field-name">Bio</div>
+          <div class="field-value">{{data.captainBio}}</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Capability -->
+    <div class="inactive tab-content capability-content">
+      <div class="capability-title">{{data.capabilityName}}</div>
+      <div>
+        <img class="line" src="line.png" alt="line">
+      </div>
+      <div class="tab-info" ng-bind-html="c.trustHTML(data.capabilityIntroduction)">
+      </div>
+    </div>
+
+    <!-- Vice Captain -->
+    <div class="inactive tab-content">
+      <div class="vice-cap-title">
+        <div class="capability-title">Vice Captains</div>
+        <div>
+          <img class="line" src="line.png" alt="line">
+        </div>
+      </div>
+      <div class="vice-cap-content">
+        <div class='vice-cap' ng-repeat='subLead in data.captainSubLead'>
+          <div>
+            <img src="{{subLead.avatar}}" alt="vice-cap-icon" class="vice-cap-icon cap-img">
+          </div>
+          <div class="vice-cap-name field-value">{{subLead.name}}</div>
+          <div class="vice-cap-info">Email: {{subLead.email}}</div>
+        </div>
+      </div>
+    </div>
+    
+  </div>
+  <div class="tabs">
+    <h3 class="tab-title" ng-click='c.setActive(0)'>Captain Profile</h3>
+    <h3 class="inactive tab-title" ng-click='c.setActive(1)'>Capability</h3>
+    <h3 class="inactive tab-title" ng-click='c.setActive(2)'>Vice Captains</h3>
+  </div>
+</div>
+<div style="position: fixed; bottom: 39.68px;z-index: 1000; right: 10%; ">
+  <img ng-if="data.mode == 'avenger'"
+       class="" title="Toggle Header & Footer"
+       src="toogle-avenger.png" ng-click="::c.toggle()"
+       style="cursor: pointer; width: 64px; height: 64px; border-radius: 32px; text-align: center; font-size: 42px; color: rgb(255, 255, 255); padding: 1px;">
+
+</div>]]></template>
+    </sp_widget>
+</record_update>
