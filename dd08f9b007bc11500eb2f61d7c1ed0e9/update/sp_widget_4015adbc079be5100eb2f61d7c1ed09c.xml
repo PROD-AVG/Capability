@@ -1,0 +1,279 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sp_widget">
+    <sp_widget action="INSERT_OR_UPDATE">
+        <category>custom</category>
+        <client_script><![CDATA[api.controller=function(spModal) {
+  /* widget controller */
+  var c = this;
+		c.onAlert = function (name,color){
+		spModal.open({
+		widget: 'cap_popup',
+		size: 'popupFullScreen',
+		widgetInput:{
+				name:name,
+				color: color
+			},
+		headerStyle: {display: "none"},
+		footerStyle: {display: "none"},
+	});
+	}	
+}]]></client_script>
+        <controller_as>c</controller_as>
+        <css>#cap-normal-mode {
+  font-family: 'Outfit', sans-serif;
+}
+
+#title-normal-mode {
+  font-size: 4.5rem;
+  font-weight: 700;
+  text-align: center;
+  margin: 8vh auto;
+  color: black;
+}
+
+#cap-foot {
+  width: 100vw;
+  height: 2vh;
+}
+
+.captain-text {
+  letter-spacing: .05em;
+  text-shadow: 4px 4px 0px #d5d5d5, 7px 7px 0px rgba(0, 0, 0, 0.2);
+}
+
+.cap-block {
+  height: 20vw;
+}
+
+.cap-block .cap-block-element {
+  height: 100%;
+}
+
+.cap-lead-avatar img {
+  width: 80%;
+  height: 100%;
+}
+
+.cap-info {
+  display: flex;
+  align-items: center;
+}
+
+.cap-info-content {
+  width: 100%;
+}
+
+.info-right .cap-info-content {
+  padding-left: 12%;
+}
+
+.info-left .cap-info-content {
+  padding-left: 12%;
+}
+
+.blue, .white, .orange, .green .cap-info-content {
+  color: #062d43;
+}
+
+.violet, .dark-green .cap-info-content {
+  color: white;
+}
+
+.cap-name {
+  padding-top: 1.3%;
+}
+
+.know-more {
+  padding-top: 2.6%;
+  line-height: 1.9rem;
+}
+
+/** TEXT EFFECT **/
+
+.know-more span:hover {
+  font-size: 1.7rem;
+  line-height: 1.7rem;
+  transition: 0.3s ease-in-out;
+}
+
+.know-more span {
+  font-size: 1.3rem;
+  transition: 0.3s ease-in-out;
+}
+
+.cap-info .captain {
+  font-weight: 700;
+  font-size: 1.6rem;
+}
+
+.cap-info .cap-name {
+  font-weight: 700;
+  font-size: 3.5rem;
+}
+
+.cap-info .know-more {
+  font-weight: 700;
+  font-size: 1.5rem;
+  height: 2rem;
+}
+
+.blue .more-info {
+  background-color: #6DB1DA;
+}
+
+.blue .cap-lead-avatar {
+  background-color: #93C3E3;
+}
+
+.blue .cap-info {
+  background-color: #2687C8;
+}
+
+.violet .more-info {
+  background-color: #7444AB;
+}
+
+.violet .cap-lead-avatar {
+  background-color: #AB8BCB;
+}
+
+.violet .cap-info {
+  background-color: #5F249F;
+}
+
+.white .more-info {
+  background-color: #E2E2E3;
+}
+
+.white .cap-lead-avatar {
+  background-color: #D3D4D5;
+}
+
+.white .cap-info {
+  background-color: #FEFEFE;
+}
+
+.orange .more-info {
+  background-color: #FFD351;
+}
+
+.orange .cap-lead-avatar {
+  background-color: #FFE69C;
+}
+
+.orange .cap-info {
+  background-color: #FFC107;
+}
+
+.green .more-info {
+  background-color: #88E781;
+}
+
+.green .cap-lead-avatar {
+  background-color: #BDEBB9;
+}
+
+.green .cap-info {
+  background-color: #79CE74;
+}
+
+.dark-green .more-info {
+  background-color: #213C4C;
+}
+
+.dark-green .cap-lead-avatar {
+  background-color: #5D7783;
+}
+
+.dark-green .cap-info {
+  background-color: #062D43;
+}
+
+/** IMAGE EFFECT **/
+
+.cap-lead-avatar:hover img{
+  transform: scale(1.25) translateY(-10%);
+  transition: 0.5s ease-in-out;
+}
+
+.cap-lead-avatar img {
+  transform: scale(1);
+  transition: 0.5s ease-in-out;
+}
+
+
+
+
+
+</css>
+        <data_table>sp_instance</data_table>
+        <demo_data/>
+        <description/>
+        <docs/>
+        <field_list/>
+        <has_preview>true</has_preview>
+        <id>list_captains_normal_model</id>
+        <internal>false</internal>
+        <link><![CDATA[function link(scope, element, attrs, controller) {
+  
+}]]></link>
+        <name>[Normal Mode] List of Captains section</name>
+        <option_schema/>
+        <public>false</public>
+        <roles/>
+        <script><![CDATA[(function() {
+	data.mode = $sp.getParameter('mode');
+	data.capability = new CapabilityUtils().getGeneralCapInfo();
+
+})();]]></script>
+        <servicenow>false</servicenow>
+        <sys_class_name>sp_widget</sys_class_name>
+        <sys_created_by>NDANG8</sys_created_by>
+        <sys_created_on>2023-06-05 16:50:30</sys_created_on>
+        <sys_id>4015adbc079be5100eb2f61d7c1ed09c</sys_id>
+        <sys_mod_count>293</sys_mod_count>
+        <sys_name>[Normal Mode] List of Captains section</sys_name>
+        <sys_package display_value="Capability" source="x_292088_capabil_0">dd08f9b007bc11500eb2f61d7c1ed0e9</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Capability">dd08f9b007bc11500eb2f61d7c1ed0e9</sys_scope>
+        <sys_update_name>sp_widget_4015adbc079be5100eb2f61d7c1ed09c</sys_update_name>
+        <sys_updated_by>NDANG8</sys_updated_by>
+        <sys_updated_on>2023-06-12 15:48:47</sys_updated_on>
+        <template><![CDATA[<div id="cap-normal-mode" ng-if="data.mode !== 'avenger'">
+  	<div id="title-normal-mode">
+      ${It's time to meet our} <span class="captain-text">${Captains}</span>
+    </div>
+  
+    <div id="cap-list" ng-repeat="capData in data.capability" >
+      <div class="row cap-block" id="{{capData.name}}" ng-class="capData.colorClass" ng-if="capData.sideClass=='info-right'">
+            <div class="col-xs-3 cap-block-element more-info"></div>
+            <div class="col-xs-3 cap-block-element cap-lead-avatar text-center">
+                <img src="{{capData.avatar}}" alt="{{capData.name}} Cap Lead">
+          </div>
+            <div class="col-xs-6 cap-block-element cap-info" ng-class="capData.sideClass">
+                <div class="cap-info-content">
+                    <div class="captain">Captain {{capData.lead}}</div>
+                    <div class="cap-name">{{capData.name}}</div>
+                    <div class="know-more" ng-click="c.onAlert(capData.name,capData.colorClass)"> <span> Get to know more + </span> </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="row cap-block" id="{{capData.name}}" ng-class="capData.colorClass" ng-if="capData.sideClass=='info-left'">
+            <div class="col-xs-6 cap-block-element cap-info" ng-class="capData.sideClass">
+                <div class="cap-info-content">
+                    <div class="captain">Captain {{capData.lead}}</div>
+                    <div class="cap-name">{{capData.name}}</div>
+                    <div class="know-more" ng-click="c.onAlert(capData.name,capData.colorClass)"> <span> Get to know more + </span> </div>
+                </div>
+            </div>
+            <div class="col-xs-3 cap-block-element cap-lead-avatar text-center">
+                <img src="{{capData.avatar}}" alt="{{capData.name}} Cap Lead">
+          </div> 
+            <div class="col-xs-3 cap-block-element more-info"></div>     
+        </div>
+  	</div>
+</div>
+
+]]></template>
+    </sp_widget>
+</record_update>
