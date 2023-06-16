@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sp_widget">
+    <sp_widget action="INSERT_OR_UPDATE">
+        <category>custom</category>
+        <client_script><![CDATA[api.controller=function() {
+  /* widget controller */
+  var c = this;
+};]]></client_script>
+        <controller_as>c</controller_as>
+        <css>.most-viewed-kb-section {&#13;
+  margin-top: 30px;&#13;
+  margin-bottom: 50px;&#13;
+}</css>
+        <data_table>sp_instance</data_table>
+        <demo_data/>
+        <description/>
+        <docs/>
+        <field_list/>
+        <has_preview>false</has_preview>
+        <id/>
+        <internal>false</internal>
+        <link><![CDATA[function link(scope, element, attrs, controller) {
+  
+}]]></link>
+        <name>Capability - Most Viewed Articles</name>
+        <option_schema/>
+        <public>false</public>
+        <roles/>
+        <script><![CDATA[(function() {
+	/* populate the 'data' object */
+	/* e.g., data.table = $sp.getValue('table'); */
+	data.mode = $sp.getParameter('mode');
+	data.kbWidget = $sp.getWidget('cap-most-viewed-articles');
+})();]]></script>
+        <servicenow>false</servicenow>
+        <sys_class_name>sp_widget</sys_class_name>
+        <sys_created_by>HTRAN210</sys_created_by>
+        <sys_created_on>2023-06-08 17:39:12</sys_created_on>
+        <sys_id>519d45b90753a9500eb2f61d7c1ed02e</sys_id>
+        <sys_mod_count>3</sys_mod_count>
+        <sys_name>Capability - Most Viewed Articles</sys_name>
+        <sys_package display_value="Capability" source="x_292088_capabil_0">dd08f9b007bc11500eb2f61d7c1ed0e9</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Capability">dd08f9b007bc11500eb2f61d7c1ed0e9</sys_scope>
+        <sys_update_name>sp_widget_519d45b90753a9500eb2f61d7c1ed02e</sys_update_name>
+        <sys_updated_by>HTRAN210</sys_updated_by>
+        <sys_updated_on>2023-06-09 07:01:32</sys_updated_on>
+        <template><![CDATA[<div class="most-viewed-kb-section" ng-if="data.mode != 'avenger'">
+  <sp-widget widget="data.kbWidget"/>
+</div>]]></template>
+    </sp_widget>
+</record_update>
