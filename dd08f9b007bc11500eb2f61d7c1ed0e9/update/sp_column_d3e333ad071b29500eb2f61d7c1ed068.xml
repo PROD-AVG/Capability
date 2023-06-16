@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sp_column">
+    <sp_column action="INSERT_OR_UPDATE">
+        <class_name/>
+        <order>1</order>
+        <size>12</size>
+        <size_lg/>
+        <size_sm/>
+        <size_xs/>
+        <sp_row display_value="1">d7e333ad071b29500eb2f61d7c1ed065</sp_row>
+        <sys_class_name>sp_column</sys_class_name>
+        <sys_created_by>DDOAN30</sys_created_by>
+        <sys_created_on>2023-06-08 11:06:03</sys_created_on>
+        <sys_id>d3e333ad071b29500eb2f61d7c1ed068</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>1</sys_name>
+        <sys_package display_value="Capability" source="x_292088_capabil_0">dd08f9b007bc11500eb2f61d7c1ed0e9</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Capability">dd08f9b007bc11500eb2f61d7c1ed0e9</sys_scope>
+        <sys_update_name>sp_column_d3e333ad071b29500eb2f61d7c1ed068</sys_update_name>
+        <sys_updated_by>DDOAN30</sys_updated_by>
+        <sys_updated_on>2023-06-08 11:06:03</sys_updated_on>
+    </sp_column>
+</record_update>
