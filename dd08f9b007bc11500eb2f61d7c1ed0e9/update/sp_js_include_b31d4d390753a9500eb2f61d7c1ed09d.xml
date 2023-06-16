@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sp_js_include">
+    <sp_js_include action="INSERT_OR_UPDATE">
+        <display_name>https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js</display_name>
+        <source>url</source>
+        <sys_class_name>sp_js_include</sys_class_name>
+        <sys_created_by>HTRAN210</sys_created_by>
+        <sys_created_on>2023-06-08 17:35:44</sys_created_on>
+        <sys_id>b31d4d390753a9500eb2f61d7c1ed09d</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js</sys_name>
+        <sys_package display_value="Capability" source="x_292088_capabil_0">dd08f9b007bc11500eb2f61d7c1ed0e9</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Capability">dd08f9b007bc11500eb2f61d7c1ed0e9</sys_scope>
+        <sys_ui_script/>
+        <sys_update_name>sp_js_include_b31d4d390753a9500eb2f61d7c1ed09d</sys_update_name>
+        <sys_updated_by>HTRAN210</sys_updated_by>
+        <sys_updated_on>2023-06-08 17:35:44</sys_updated_on>
+        <url>https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js</url>
+    </sp_js_include>
+</record_update>
