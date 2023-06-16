@@ -1,0 +1,157 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sp_widget">
+    <sp_widget action="INSERT_OR_UPDATE">
+        <category>custom</category>
+        <client_script><![CDATA[function($rootScope, $scope, $location) {
+	/* widget controller */
+	var c = this;
+
+	$scope.onClick = function(event) {
+		var id = event.target.id.toString();
+		var parms;
+		if(id == 'introduction') {
+			parms = {
+				id: 'capability',
+				mode: 'avenger'
+			};
+		} else {
+			parms = {
+				id: 'capability',
+				mode: 'avenger',
+				cap_id: event.target.id.toString()
+			};
+		}
+		$location.search(parms);
+	};
+
+}]]></client_script>
+        <controller_as>c</controller_as>
+        <css>.slider-container {
+  height: 100vh;
+	overflow: auto;
+}
+
+.slider-img-container {
+    // background-image: url('');
+    height: 15rem;
+    width: 100%;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+ 		position: relative;
+    text-align: center;
+    color: white;
+    cursor: pointer;
+}
+
+/* Bottom left text */
+.slider-img-title {
+    position: absolute;
+    bottom: 8px;
+    left: 10px;
+    text-transform: uppercase;
+    font-weight: bold;
+    letter-spacing: 1px;
+  	font-family: 'Outfit', sans-serif;
+  	font-size: 16px;
+}
+
+.overlay {
+    background-color: #000;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    opacity: 0.6;
+    transition: .3s ease;
+}
+
+.slider-img-container:hover .overlay {
+    height: 0%;
+}
+
+ /* Scrollbar */
+.slider-container::-webkit-scrollbar-track {
+	-webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
+	background-color: #acc4c5;
+}
+
+.slider-container::-webkit-scrollbar {
+	width: 6px;
+}
+
+.slider-container::-webkit-scrollbar-thumb {
+	background-color: #062D43;
+  height: 200px;
+}</css>
+        <data_table>sp_instance</data_table>
+        <demo_data/>
+        <description/>
+        <docs/>
+        <field_list/>
+        <has_preview>true</has_preview>
+        <id>capability_avenger_slider</id>
+        <internal>false</internal>
+        <link><![CDATA[function link(scope, element, attrs, controller) {  }]]></link>
+        <name>Capability Avenger Slider</name>
+        <option_schema/>
+        <public>false</public>
+        <roles/>
+        <script><![CDATA[(function () {
+	/* populate the 'data' object */
+	/* e.g., data.table = $sp.getValue('table'); */
+	data.mode = $sp.getParameter('mode');
+	data.capabilities = [];
+
+	var capGR = new GlideRecord("cmdb_ci_business_capability");
+	capGR.addEncodedQuery(
+		"parent=e31711779757cd507fd7f97e6253af80^hierarchy_level=1^active=true^x_292088_capabil_0_cap_lead!=NULL"
+	);
+	capGR.orderBy('order');
+	capGR.query();
+
+	while (capGR.next()) {
+		var cap_obj = {};
+		cap_obj.sys_id = capGR.getUniqueValue();
+		cap_obj.name = capGR.getValue("name");
+		cap_obj.image =
+			"/" +
+			capGR.getValue("u_background_hero") +
+			".iix";
+		data.capabilities.push(cap_obj);
+	}
+})();
+]]></script>
+        <servicenow>false</servicenow>
+        <sys_class_name>sp_widget</sys_class_name>
+        <sys_created_by>HLE211</sys_created_by>
+        <sys_created_on>2023-06-05 16:03:21</sys_created_on>
+        <sys_id>c13b99b80797e5100eb2f61d7c1ed089</sys_id>
+        <sys_mod_count>64</sys_mod_count>
+        <sys_name>Capability Avenger Slider</sys_name>
+        <sys_package display_value="Capability" source="x_292088_capabil_0">dd08f9b007bc11500eb2f61d7c1ed0e9</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Capability">dd08f9b007bc11500eb2f61d7c1ed0e9</sys_scope>
+        <sys_update_name>sp_widget_c13b99b80797e5100eb2f61d7c1ed089</sys_update_name>
+        <sys_updated_by>HTRAN210</sys_updated_by>
+        <sys_updated_on>2023-06-09 08:25:25</sys_updated_on>
+        <template><![CDATA[<div class="slider-container" ng-if="data.mode == 'avenger'">
+  <!-- AVENGER SLIDER -->
+  <div class="slider-img-container" id="slider-intro" style="background-image: url(AvengerLogoBrickNeon.jpg)"
+      id="introduction" ng-click="onClick($event)">
+        <div class="overlay"></div>
+        <div class="slider-img-title">
+          Introduction
+      	</div>
+    </div>
+    <div ng-repeat="cap_obj in data.capabilities" class="slider-img-container" id="{{cap_obj.sys_id}}" style="background-image: url({{cap_obj.image}})" ng-click="onClick($event)">
+        <div class="overlay"></div>
+        <div class="slider-img-title">
+          {{cap_obj.name}}
+      	</div>
+    </div>
+</div>]]></template>
+    </sp_widget>
+</record_update>
