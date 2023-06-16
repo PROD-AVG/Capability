@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_script_include">
+    <sys_script_include action="INSERT_OR_UPDATE">
+        <access>package_private</access>
+        <active>true</active>
+        <api_name>x_292088_capabil_0.CapabilityUtils</api_name>
+        <caller_access/>
+        <client_callable>false</client_callable>
+        <description/>
+        <name>CapabilityUtils</name>
+        <script><![CDATA[var CapabilityUtils = Class.create();
+CapabilityUtils.prototype = {
+    initialize: function() {
+    },
+	
+	getGeneralCapInfo: function() {
+		var data = [];
+		var colorList = gs.getProperty('x_292088_capabil_0.dxc.capability.color_set').split(',');
+		var count = 0;
+		
+		var grCap = new GlideRecord('cmdb_ci_business_capability');
+		grCap.addQuery('x_292088_capabil_0_cap_lead', '!=', 'NULL');
+		grCap.addQuery('hierarchy_level', '1');
+		grCap.addActiveQuery();
+		grCap.orderBy('order');
+		grCap.query();
+		while (grCap.next()){
+			var capData = {};
+
+			capData.name = grCap.u_full_name.toString();
+			//Get Cap lead name = First name + Sure name
+			var capLeadFullName = grCap.x_292088_capabil_0_cap_lead.name.toString().split(' ');
+			capData.lead = capLeadFullName.slice(0, 2).join(' ');
+
+			capData.avatar = grCap.x_292088_capabil_0_cap_lead.avatar.getDisplayValue();
+			if (!capData.avatar){//If the current cap lead does not have an avatar then display the default snow user avatar
+				capData.avatar = gs.getProperty('x_292088_capabil_0.dxc.capability.default-user-avatar');
+			}
+
+			if (count % 2 === 0){
+				capData.sideClass = 'info-right';
+			} else {
+				capData.sideClass = 'info-left';
+			}
+
+			capData.colorClass = colorList[count % colorList.length].trim();
+
+			data.push(capData);
+			count += 1;
+		}
+		
+		return data;
+	},
+
+    type: 'CapabilityUtils'
+};]]></script>
+        <sys_class_name>sys_script_include</sys_class_name>
+        <sys_created_by>NDANG8</sys_created_by>
+        <sys_created_on>2023-06-07 17:18:41</sys_created_on>
+        <sys_id>346f3f11071325500eb2f61d7c1ed0ca</sys_id>
+        <sys_mod_count>4</sys_mod_count>
+        <sys_name>CapabilityUtils</sys_name>
+        <sys_package display_value="Capability" source="x_292088_capabil_0">dd08f9b007bc11500eb2f61d7c1ed0e9</sys_package>
+        <sys_policy>read</sys_policy>
+        <sys_scope display_value="Capability">dd08f9b007bc11500eb2f61d7c1ed0e9</sys_scope>
+        <sys_update_name>sys_script_include_346f3f11071325500eb2f61d7c1ed0ca</sys_update_name>
+        <sys_updated_by>NDANG8</sys_updated_by>
+        <sys_updated_on>2023-06-08 17:21:01</sys_updated_on>
+    </sys_script_include>
+</record_update>
