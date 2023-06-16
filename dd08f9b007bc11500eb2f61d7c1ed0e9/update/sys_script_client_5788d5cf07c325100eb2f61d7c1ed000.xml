@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update sys_domain="global" table="sys_script_client">
+    <sys_script_client action="INSERT_OR_UPDATE">
+        <active>true</active>
+        <applies_extended>false</applies_extended>
+        <condition/>
+        <description/>
+        <field>x_292088_capabil_0_sub_leads</field>
+        <global>true</global>
+        <isolate_script>true</isolate_script>
+        <messages/>
+        <name>Verify Sub Leads</name>
+        <order/>
+        <script><![CDATA[function onChange(control, oldValue, newValue, isLoading, isTemplate) {
+
+    if (isLoading || newValue === '') {
+        return;
+    }
+
+    var hasError = false;
+    var maxNumberOfSubLeads = 3;
+    var capLeadValue = g_form.getValue("x_292088_capabil_0_cap_lead");
+    var subLeadItems = g_form.getValue("x_292088_capabil_0_sub_leads").split(',');
+
+    if (subLeadItems.length > maxNumberOfSubLeads) {
+        g_form.showFieldMsg("x_292088_capabil_0_sub_leads", "The of sub leads must be smaller than 3!", "error");
+        hasError = true;
+    }
+
+    if (subLeadItems[subLeadItems.length - 1].toString() == capLeadValue) {
+        g_form.showFieldMsg("x_292088_capabil_0_sub_leads", "Sub lead and Cap lead cannot be the same!", "error");
+        hasError = true;
+    }
+
+    if (hasError == true) {
+        //remove the sub lead has just been added to the list which cause the error
+        setTimeout(removeSubLead, 2000);
+
+        function removeSubLead() {
+            subLeadItems.splice(-1);
+            g_form.setValue("x_292088_capabil_0_sub_leads", subLeadItems.toString());;
+        }
+    }
+
+}]]></script>
+        <sys_class_name>sys_script_client</sys_class_name>
+        <sys_created_by>TNGUYEN640</sys_created_by>
+        <sys_created_on>2023-05-31 05:24:40</sys_created_on>
+        <sys_domain>global</sys_domain>
+        <sys_domain_path>/</sys_domain_path>
+        <sys_id>5788d5cf07c325100eb2f61d7c1ed000</sys_id>
+        <sys_mod_count>31</sys_mod_count>
+        <sys_name>Verify Sub Leads</sys_name>
+        <sys_overrides/>
+        <sys_package display_value="Global" source="global">global</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Capability">dd08f9b007bc11500eb2f61d7c1ed0e9</sys_scope>
+        <sys_update_name>sys_script_client_5788d5cf07c325100eb2f61d7c1ed000</sys_update_name>
+        <sys_updated_by>TNGUYEN640</sys_updated_by>
+        <sys_updated_on>2023-05-31 06:45:14</sys_updated_on>
+        <table>cmdb_ci_business_capability</table>
+        <type>onChange</type>
+        <ui_type>0</ui_type>
+        <view/>
+    </sys_script_client>
+</record_update>
