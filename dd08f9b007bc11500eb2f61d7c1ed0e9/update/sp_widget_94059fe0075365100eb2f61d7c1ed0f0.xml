@@ -1,0 +1,621 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sp_widget">
+    <sp_widget action="INSERT_OR_UPDATE">
+        <category>custom</category>
+        <client_script><![CDATA[api.controller=function() {
+	/* widget controller */
+
+	var swiper = new Swiper('.swiper-container', {
+		slidesPerView: 1,
+		spaceBetween: 10,
+		loop: false,
+		breakpoints: {
+			640: {
+				slidesPerView: 2,
+				spaceBetween: 20
+			},
+			768: {
+				slidesPerView: 3,
+				spaceBetween: 40
+			},
+			1024: {
+				slidesPerView: 4,
+				spaceBetween: 60
+			}
+		}
+	});
+
+	$('.previous-button').click(function () {
+		swiper.slidePrev();
+	});
+
+	$('.next-button').click(function () {
+		swiper.slideNext();
+	});
+
+
+	var c = this;
+	c.sysIdCategory = "";
+
+	c.topics = [];
+	c.topics = c.data.topics;
+
+	c.kbs= [];
+	c.kbs = c.data.kbs;
+
+
+	c.selectedIndex = -1;
+
+	c.selectTopic = function(index,sysId,name,sysIdCategory) {
+		c.selectedIndex = index;
+		c.data.sysID = sysId;
+		c.data.nameTopic = name;
+		c.sysIdCategory = sysIdCategory;
+
+		c.server.update().then(function(response) {
+			c.kbs = [];
+			c.kbs = response.kbs;
+		});
+
+	};
+
+	c.openKS = function(sysIdCategory){
+		window.open("?id=kb_view2", "_blank");
+	}
+	/*if(sysIdCategory == ""){
+			window.open("?id=kb_view2", "_blank");
+		}else{
+			window.open("?id=kb_category&kb_category=" + sysIdCategory, "_blank");
+		}*/
+
+
+
+
+
+
+};]]></client_script>
+        <controller_as>c</controller_as>
+        <css>.section-title {
+  margin: 3rem;
+}
+
+.first-title {
+  display: block;
+  color: #062d42;
+  font-size: 2rem;
+}
+
+.second-title {
+  display: block;
+  margin-bottom: 20px;
+  color: #072e45;
+  font-size: 4.5rem;
+}
+
+.third-title {
+  display: block;
+  color: #062d42;
+  font-size: 16px;
+  font-size: 2rem;
+}
+
+
+/* --- TOPIC ITEMS --- */ 
+
+.section-topic {
+  margin-left: 30px;
+  margin-right: 30px;
+  justify-content: center;
+}
+
+.text-wrapper {
+  display: inline-block;
+  width: 130px;
+  border: 1px solid;
+  border-color: #fff;
+  background-color: white;
+  text-align: center;
+  border-radius: 40px;
+  font-size: 14px;
+  margin-right: 5px;
+  cursor: pointer;
+  margin-top:10px;
+  font-weight: 500;
+  padding: 5px 10px;
+
+}
+.text-topic{
+  padding-top: 5px;
+}
+
+.text-wrapper:hover {
+  text-align: center;
+  background-color: #052e44;
+  color: #fff;
+}
+
+.text-wrapper.active {
+  background-color: #052e44;
+  color: #fff;
+}
+
+.font-weight-bold {
+  font-weight: 700 !important;
+}
+
+.overflow-hidden {
+  overflow: hidden !important;
+}
+
+.position-relative {
+  position: relative !important;
+}
+
+/* PREVIOUS - NEXT BUTTON */
+.pn-button {
+  text-align: right;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  color: #072b3e;
+}
+
+.previous-button {
+  justify-content: center;
+  border-color: #072b3e;
+  border-radius: 0.5rem;
+  background-color: white;
+  opacity: 30%;
+  height: 50px;
+  width: 50px;
+}
+.previous-button:hover{
+  opacity: 1;
+}
+
+.previous-icon{
+  width: 20px;
+  height: 20px;
+}
+.next-button {
+  margin-left: 10px;
+  justify-content: center;
+  border-color: #072b3e;
+  border-radius: 0.5rem;
+  background-color: white;
+  opacity: 30%;
+  height: 50px;
+  width: 50px;
+}
+.next-button:hover {
+  opacity: 1;
+}
+
+.next-icon{
+  width: 20px;
+  height: 20px;
+}
+
+/* --- CARD --- */ 
+
+/*#news-slider{
+margin-top: 80px;
+}*/
+
+/*8.cards{
+  display: flex; 
+  //margin-left: -30px;
+}*/
+
+.swiper-slide{
+  border-radius: 5px;
+  overflow: hidden;
+  background-color: white;
+  box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+  width: 380px;
+  margin-right: 60px;
+  //margin-left: 30px;
+  //display: flex;
+  //flex-direction: column;
+}
+
+.card-image{
+  height: 200px;
+  width: 100%;
+  object-fit: cover;
+  flex-shrink: 0;
+}
+
+.card-content{
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+.card-top{
+  padding: 25px;
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+
+.card-bottom{
+  padding: 25px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: auto;
+  flex-shrink: 0;
+}
+
+.card-topic {
+  display: flex;
+  align-items: center;
+}
+.card-thumbnail {
+  width: 30px;
+  height: 30px;
+  flex-shrink: 0;
+}
+
+.card-title{
+  font-weight: 600;
+  margin-left:5px;
+  font-size: 20px;
+  flex: 1;
+}
+
+.card-author {
+  font-size: 12px;
+}
+
+.card-description {
+  margin-top:-10px;
+  font-size: 20px;
+  font-weight: 700;
+  word-break: break-all;
+  font-size: 15px;
+  font-weight: bold;
+  word-break: break-all;
+  display:-webkit-box;
+  -webkit-line-clamp: 1;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  word-break: break-word;
+}
+
+.card-read {
+  align-items: center;
+}
+
+.card-view {
+  border-radius: 5px;
+  display: flex;
+  padding: 5px 10px;
+  border: 1px solid;
+  align-items: center;
+}
+
+.card-moreinfo {
+  text-decoration: none;
+  display: inline-block;
+  position: relative;
+  color: #333;
+  transition: all 0.3s ease-in-out 0s;
+}
+
+.card-moreinfo:after {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 2px;
+  bottom: -2px;
+  left: 0;
+  background-color: #333;
+  transform: scaleX(0);
+  transition: all 0.3s ease-in-out 0s;
+}
+
+.card-moreinfo:hover::after {
+  transform: scaleX(1);
+}
+
+.eye-icon {
+  margin-right: 10px; 
+}
+
+/* --- FOOTER --- */ 
+.button-footer{
+  display: block;
+  text-align:center;
+}
+
+/*
+.custom-btn{
+margin-top:20px;
+padding: 10px;
+text-align:center;
+border-radius: 5px;
+font-weight: bold;
+background-color: #4bd646;
+color: #030903;
+border:10px;
+border-color:
+}*/
+
+.custom-btn {
+  margin-top: 20px;
+  width: 250px;
+  height: 40px;
+  color: black;
+  border-radius: 5px;
+  padding: 10px 25px;
+  font-weight: 600;
+  background: transparent;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  position: relative;
+  display: inline-block;
+  box-shadow:inset 2px 2px 2px 0px rgba(255,255,255,.5),
+    7px 7px 20px 0px rgba(0,0,0,.1),
+    4px 4px 5px 0px rgba(0,0,0,.1);
+  outline: none;
+}
+
+/* 15 */
+.btn-15 {
+  background: #62d84e;
+  border: none;
+  z-index: 1;
+}
+.btn-15:after {
+  position: absolute;
+  content: "";
+  width: 0;
+  height: 100%;
+  top: 0;
+  right: 0;
+  z-index: -1;
+  background-color: #86ed78;
+  border-radius: 5px;
+  box-shadow:inset 2px 2px 2px 0px rgba(255,255,255,.5),
+    7px 7px 20px 0px rgba(0,0,0,.1),
+    4px 4px 5px 0px rgba(0,0,0,.1);
+  transition: all 0.6s ease;
+}
+.btn-15:hover {
+  color: black;
+}
+.btn-15:hover:after {
+  left: 0;
+  width: 100%;
+}
+.btn-15:active {
+  top: 2px;
+}
+
+
+
+
+
+</css>
+        <data_table>sp_instance</data_table>
+        <demo_data/>
+        <description/>
+        <docs/>
+        <field_list/>
+        <has_preview>true</has_preview>
+        <id>cap-most-viewed-articles</id>
+        <internal>false</internal>
+        <link><![CDATA[function link(scope, element, attrs, controller) {
+  
+}]]></link>
+        <name>Most Viewed Articles</name>
+        <option_schema/>
+        <public>false</public>
+        <roles/>
+        <script><![CDATA[(function() {
+	/* populate the 'data' object */
+	/* e.g., data.table = $sp.getValue('table'); */
+
+	data.topics = [];
+	data.topics.push({
+		'name': 'All',
+		'sysId': '',
+		'sysIdCategory' : ''
+	})
+	var grCap = new GlideRecord('cmdb_ci_business_capability');
+	grCap.addQuery('hierarchy_level', 1);
+	grCap.addQuery('x_292088_capabil_0_cap_lead', '!=', 'NULL');
+	grCap.addQuery('parent', 'e31711779757cd507fd7f97e6253af80'); //servicenow
+	grCap.addActiveQuery();
+	grCap.query();
+	while(grCap.next()){
+		data.topics.push({
+				'name' : grCap.getValue('name'),
+				'sysId' : grCap.getValue('sys_id')
+		});
+		/*
+		var grKB = new GlideRecord('kb_category');
+		var sysIdCategory = '';
+		grKB.addQuery('u_capability', grCap.getValue('sys_id'));
+		grKB.addQuery('full_category', grCap.getValue('name'));
+		grKB.query();
+		if(grKB.next()){
+			 sysIdCategory = grKB.getValue('sys_id');
+		}
+		data.topics.push({
+				'name' : grCap.getValue('name'),
+				'sysId' : grCap.getValue('sys_id'),
+				'sysIdCategory': sysIdCategory
+			});
+		*/
+		
+	}
+
+	data.kbs= [];
+	var grKB1 = new GlideRecord('kb_knowledge');
+	grKB1.addQuery('workflow_state', 'published');
+	grKB1.orderByDesc('sys_view_count');
+	grKB1.setLimit(10);
+	grKB1.query()
+	while(grKB1.next()){
+		data.kbs.push({
+			'topic': grKB1.getDisplayValue('kb_category.u_capability'),
+			'author': grKB1.getDisplayValue('author'),
+			'shortDescr': grKB1.getValue('short_description'),
+			'view': grKB1.getValue('sys_view_count'),
+			'url': "?id=kb_article&sys_id=" + grKB1.getValue('sys_id'),
+			'cover_image' : "/" + grKB1.getDisplayValue('kb_category.u_capability.u_cover_image'),
+			'thumbnail' : "/" + grKB1.getDisplayValue('kb_category.u_capability.u_thumbnail')
+		});
+	}
+
+
+	if(input){
+		data.kbs= [];
+		if(input.nameTopic == 'All'){
+			var grKB3 = new GlideRecord('kb_knowledge');
+			grKB3.addQuery('workflow_state', 'published');
+			grKB3.orderByDesc('sys_view_count');
+			grKB3.setLimit(10);
+			grKB3.query()
+			while(grKB3.next()){
+				data.kbs.push({
+					'topic': grKB3.getDisplayValue('kb_category.u_capability'),
+					'author': grKB3.getDisplayValue('author'),
+					'shortDescr': grKB3.getValue('short_description'),
+					'view': grKB3.getValue('sys_view_count'),
+					'url': "?id=kb_article&sys_id=" + grKB3.getValue('sys_id'),
+					'cover_image' : "/" + grKB3.getDisplayValue('kb_category.u_capability.u_cover_image'),
+					'thumbnail' : "/" + grKB3.getDisplayValue('kb_category.u_capability.u_thumbnail')
+				});
+			}
+		}else{
+			var grKB4 = new GlideRecord('kb_knowledge');
+			grKB4.addQuery('kb_category.u_capability', input.sysID);
+			grKB4.addQuery('workflow_state', 'published');
+			grKB4.orderByDesc('sys_view_count');
+			grKB4.setLimit(5);
+			grKB4.query();
+			while(grKB4.next()){
+				data.kbs.push({
+					'topic': input.nameTopic,
+					'author': grKB4.getDisplayValue('author'),
+					'shortDescr': grKB4.getValue('short_description'),
+					'view': grKB4.getValue('sys_view_count'),
+					'url': "?id=kb_article&sys_id=" + grKB4.getValue('sys_id'),
+					'cover_image' : "/" + grKB4.getDisplayValue('kb_category.u_capability.u_cover_image'),
+					'thumbnail' : "/" + grKB4.getDisplayValue('kb_category.u_capability.u_thumbnail')
+				})
+			}
+		}
+
+
+	}
+
+})();]]></script>
+        <servicenow>false</servicenow>
+        <sys_class_name>sp_widget</sys_class_name>
+        <sys_created_by>HTRAN204</sys_created_by>
+        <sys_created_on>2023-06-05 06:17:01</sys_created_on>
+        <sys_id>94059fe0075365100eb2f61d7c1ed0f0</sys_id>
+        <sys_mod_count>366</sys_mod_count>
+        <sys_name>Most Viewed Articles</sys_name>
+        <sys_package display_value="Capability" source="x_292088_capabil_0">dd08f9b007bc11500eb2f61d7c1ed0e9</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Capability">dd08f9b007bc11500eb2f61d7c1ed0e9</sys_scope>
+        <sys_update_name>sp_widget_94059fe0075365100eb2f61d7c1ed0f0</sys_update_name>
+        <sys_updated_by>HTRAN204</sys_updated_by>
+        <sys_updated_on>2023-06-12 16:12:24</sys_updated_on>
+        <template><![CDATA[<script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+<script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-12 section-title">
+      <p class="first-title">
+        MOST VIEWED ARTICLES
+      </p>
+      <h2 class="second-title font-weight-bold" >Sharing to Learn</h2>
+      <p class="third-title">
+        ServiceNow Capability Team's Most Viewed Articles: "Unlocking Success, Knowledge Amplified"
+      </p>
+    </div>
+  </div>
+
+  <div class="row">
+    <!-- Topic section - Left-Right Article -->
+    <div class="col-12 section-topic">
+      <div class="text-wrapper" ng-repeat="topic in c.topics"
+           ng-click="c.selectTopic($index,topic.sysId,topic.name,topic.sysIdCategory)" ng-class="{'active': c.selectedIndex === $index}">
+        <p class="text-topic">{{topic.name}}</p>
+      </div>	
+    </div>
+  </div>
+
+  <div class="row">
+    <!-- Previous-Next Buttons -->
+    <div class="col-12 pn-button">
+      <button class="previous-button">
+        <ion-icon name="arrow-back-outline" class="previous-icon"></ion-icon> 
+      </button>
+      <button class="next-button">
+        <ion-icon name="arrow-forward-outline" class="next-icon"></ion-icon>
+      </button>
+    </div>
+  </div>
+
+
+  <!-- Knowledge Article Box -->
+  <div class="row">
+    <swiper class="col-12 swiper-container swiper">
+      <div class="swiper-wrapper cards">
+        <div class="swiper-slide" ng-repeat="item in c.kbs">
+            <img src="servicenow.jpg"class="card-image"/>
+            <div class="card-content">
+              <div class="card-top">
+                <div class="card-topic">
+                  <img class="card-thumbnail" src="thumbnail.png" width="225" height="225"/>
+                  <div class="card-title">{{item.topic}}</div>
+                </div>
+                <p class="card-author">
+                  Author: {{item.author}}
+                </p>
+                <p class="card-description">
+                  {{item.shortDescr}}
+                </p>
+              </div>
+              <div class="card-bottom">
+                <div class="card-read">
+                  <a class="card-moreinfo" href="{{item.url}}" target="_blank">Read Articles <ion-icon name="arrow-forward-outline" class="card-arrow"></ion-icon></a>
+                </div>
+                <div class="card-view"><ion-icon name="eye-outline" class="eye-icon"></ion-icon>
+                  {{item.view}} Views
+                </div>
+              </div>
+            </div>
+        </div>
+      </div>
+      <div class="swiper-pagination"></div>
+    </swiper>
+  </div>
+
+
+  <!-- All Article -->
+  <div class="row">
+    <div class="col-12 button-footer">
+      <button class="custom-btn btn-15" ng-click="c.openKS(c.sysIdCategory)">Find All Knowledge Sharing</button>
+    </div>
+  </div>
+
+</div>
+
+
+
+
+
+
+
+
+
+]]></template>
+    </sp_widget>
+</record_update>
