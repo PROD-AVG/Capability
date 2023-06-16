@@ -1,0 +1,521 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sp_widget">
+    <sp_widget action="INSERT_OR_UPDATE">
+        <category>custom</category>
+        <client_script><![CDATA[api.controller = function ($scope,$rootScope, $location) {
+	/* Widget Controller */
+	c = this;
+	$scope.flag = false;
+	$scope.count = 0;
+	c.switchMode = function(mode){
+		var parms = {
+			id: 'capability',
+			mode: mode
+		};
+		$location.search(parms);
+		
+	$('header').hide();
+	$('footer').hide();
+	}
+
+
+};
+]]></client_script>
+        <controller_as>c</controller_as>
+        <css>.btn-container, .btn-mode {
+
+
+  box-sizing: border-box;
+  font-family: "Roboto", sans-serif;
+}
+
+.container-fluid {
+  min-height: 400px;
+  max-height: 600px;
+  width: 1000px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
+.btn-container .btn-mode {
+  position: relative;
+  top: 0;
+  left: 0;
+  width: 250px;
+  height: 50px;
+  margin: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.btn-container .btn-mode a {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: rgba(255, 255, 255, 0.05);
+  box-shadow: 0 15px 15px rgba(0, 0, 0, 0.3);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 30px;
+  padding: 10px;
+  letter-spacing: 1px;
+  text-decoration: none;
+  overflow: hidden;
+  color: #fff;
+  font-weight: 400px;
+  z-index: 1;
+  transition: 0.5s;
+  backdrop-filter: blur(15px);
+}
+.btn-container .btn-mode:hover a {
+  letter-spacing: 3px;
+}
+.btn-container .btn-mode a::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 50%;
+  height: 100%;
+  background: linear-gradient(to left, rgba(255, 255, 255, 0.15), transparent);
+  transform: skewX(45deg) translate(0);
+  transition: 0.5s;
+  filter: blur(0px);
+}
+.btn-container .btn-mode:hover a::before {
+  transform: skewX(45deg) translate(200px);
+}
+.btn-container .btn-mode::before {
+  content: "";
+  position: absolute;
+  left: 50%;
+  transform: translatex(-50%);
+  bottom: -5px;
+  width: 30px;
+  height: 10px;
+  background: #f00;
+  border-radius: 10px;
+  transition: 0.5s;
+  transition-delay: 0.5;
+}
+.btn-container .btn-mode:hover::before /*lightup button*/ {
+  bottom: 0;
+  height: 50%;
+  width: 80%;
+  border-radius: 30px;
+}
+
+.btn-container .btn-mode::after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  transform: translatex(-50%);
+  top: -5px;
+  width: 30px;
+  height: 10px;
+  background: #f00;
+  border-radius: 10px;
+  transition: 0.5s;
+  transition-delay: 0.5;
+}
+.btn-container .btn-mode:hover::after /*lightup button*/ {
+  top: 0;
+  height: 50%;
+  width: 80%;
+  border-radius: 30px;
+}
+.btn-container .btn-mode:nth-child(1)::before, /*chnage 1*/
+.btn-container .btn-mode:nth-child(1)::after {
+  background: #1eff45;
+  box-shadow: 0 0 5px #1eff45, 0 0 15px #1eff45, 0 0 30px #1eff45,
+    0 0 60px #1eff45;
+}
+
+
+.capability-featured {
+  background-color: #032d42;
+  margin-top:5%;
+  margin-bottom:5%;
+  margin-left: 0;
+  margin-right: 0;
+  width: 100%;
+  font-family: 'Outfit', sans-serif;
+}
+
+.make-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.capability-featured-wrap {
+  display: flex;
+}
+
+/*Left side*/
+.capability-featured-left-content {
+  text-align: center;
+}
+
+.capability-featured-left-content .left-normal-text p {
+  color: white;
+  font-size: 20px;
+  font-weight: 280;
+  line-height: 28px;
+}
+
+.capability-featured-left-content .left-header-text p {
+  font-size: 60px;
+  font-weight: bold;
+  color: #62d852;
+  padding-bottom: 10px;
+}
+
+
+.capability-featured-left-content .left-avengers-button {
+  margin-top: 3rem;
+  display: flex;
+  justify-content: center;
+}
+
+#avenger-button {
+  background: #62d852;
+}
+
+#avenger-button a {
+  color: #032d42;
+  font-size: 14px;
+  font-weight: 400;
+}
+
+#avenger-button:focus {
+  box-shadow: none;
+}
+
+#avenger-button a:focus {
+  box-shadow: none;
+}
+
+/*Right side*/
+
+.capability-featured-right {
+  margin: auto;
+}
+
+/* GRID IMAGES */
+
+.cap-grid-wrapper {
+  display: grid;
+  grid-template-columns: repeat(13, 1fr);
+  gap: 5px;
+  height:33rem;
+  width: 44rem;
+}
+
+.cap-image-container {  
+  background-position: center;
+
+  background-repeat: no-repeat;
+  background-size: cover;
+  border-radius: 5px
+}
+
+.cap-one {
+  grid-column: 1 / 4;
+  grid-row: 1 / 4;
+}
+
+.cap-two {
+  grid-column: 4 / 8;
+  grid-row: 1 / 7;
+}
+
+.cap-three {
+  grid-column: 8 / 14;
+  grid-row: 1 / 5;
+}
+
+.cap-four {
+  grid-column: 1 / 4;
+  grid-row: 4 / 7;
+}
+
+.cap-five {
+
+  grid-column: 8 / 14;
+  grid-row: 5 / 11;
+}
+
+.cap-six {
+  grid-column: 1 / 8;
+  grid-row: 7 / 11;
+}
+
+
+
+.image-loader-y-axis {
+  animation: snowflake 3s linear forwards;
+  opacity: 0;
+}
+
+@keyframes snowflake {
+  0% {
+    opacity: 0.025;
+    transform: translateY(-150%);
+    width:0%;
+    height:0%;
+  }
+  10% {
+    opacity: 0.05;
+    transform: translateY(-140%);
+    width:10%;
+    height:10%;
+  }
+  20% {
+    opacity: 0.075;
+    transform: translateY(-130%);
+    width:20%;
+    height:20%;
+  }
+  30% {
+    opacity: 0.1;
+    transform: translateY(-120%);
+    width:30%;
+    height:30%;
+  }
+  40% {
+    opacity: 0.2;
+    transform: translateY(-110%);
+    width:40%;
+    height:40%;
+  }
+  50% {
+    opacity: 0.3;
+    transform: translateY(-100%);
+    width:50%;
+    height:50%;
+  }
+  60% {
+    opacity: 0.4;
+    transform: translateY(-80%);
+    width:60%;
+    height:60%;
+  }
+  70% {
+    opacity: 0.6;
+    transform: translateY(-60%);
+    width:70%;
+    height:70%;
+  }
+  80% {
+    opacity: 0.7;
+    transform: translateY(-40%);
+    width:80%;
+    height:80%;
+  }
+  90% {
+    opacity: 0.9;
+    transform: translateY(-20%);
+    width:90%;
+    height:90%;
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0%);
+    width:100%;
+    height:100%;
+  }
+}
+
+.image-loader-x-axis {
+  animation: snowflake_x_axis 3s linear forwards;
+  opacity: 0;
+}
+
+@keyframes snowflake_x_axis {
+  0% {
+    opacity: 0.025;
+    transform: translateX(-150%);
+    width:0%;
+    height:0%;
+  }
+  10% {
+    opacity: 0.05;
+    transform: translateX(-140%);
+    width:10%;
+    height:10%;
+  }
+  20% {
+    opacity: 0.075;
+    transform: translateX(-130%);
+    width:20%;
+    height:20%;
+  }
+  30% {
+    opacity: 0.1;
+    transform: translateX(-120%);
+    width:30%;
+    height:30%;
+  }
+  40% {
+    opacity: 0.2;
+    transform: translateX(-110%);
+    width:40%;
+    height:40%;
+  }
+  50% {
+    opacity: 0.3;
+    transform: translateX(-100%);
+    width:50%;
+    height:50%;
+  }
+  60% {
+    opacity: 0.4;
+    transform: translateX(-80%);
+    width:60%;
+    height:60%;
+  }
+  70% {
+    opacity: 0.6;
+    transform: translateX(-60%);
+    width:70%;
+    height:70%;
+  }
+  80% {
+    opacity: 0.7;
+    transform: translateX(-40%);
+    width:80%;
+    height:80%;
+  }
+  90% {
+    opacity: 0.9;
+    transform: translateX(-20%);
+    width:90%;
+    height:90%;
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0%);
+    width:100%;
+    height:100%;
+  }
+}
+
+
+</css>
+        <data_table>sp_instance</data_table>
+        <demo_data/>
+        <description/>
+        <docs/>
+        <field_list/>
+        <has_preview>true</has_preview>
+        <id>normal_mode_cap_intro_section</id>
+        <internal>false</internal>
+        <link><![CDATA[function link(scope, element, attrs, controller) {
+  
+}]]></link>
+        <name>[Normal Mode] - Introduction section</name>
+        <option_schema/>
+        <public>false</public>
+        <roles/>
+        <script><![CDATA[(function () {
+	/* populate the 'data' object */
+	/* e.g., data.table = $sp.getValue('table'); */
+	data.mode = $sp.getParameter('mode');
+	if (!input) {
+		//replace the below userID with the user you want to display in the image of this intro section
+		var renderedImages = {
+			"image1":"TVU59",
+			"image2":"QTRAN43",
+			"image3":gs.getProperty('x_292088_capabil_0.image4.introduction.section.capability.page', ''),
+			"image4":"HTRAN210",
+			"image5":"NDANG3",
+			"image6":gs.getProperty('x_292088_capabil_0.image6.introduction.section.capability.page', '')
+		};
+
+		var grUser = new GlideRecord('sys_user');
+		grUser.addEncodedQuery("user_name="+ renderedImages.image1 + 
+													 "^ORuser_name=" + renderedImages.image2 +
+													 "^ORuser_name=" + renderedImages.image4 +
+													 "^ORuser_name=" + renderedImages.image5);
+		grUser.query();
+
+		var avtObject = {};
+
+		while (grUser.next()) {
+			avtObject[grUser.user_name] = "sys_attachment.do?sys_id=" + grUser.photo;
+		}
+
+		for (var attribute in renderedImages) {
+			if (avtObject.hasOwnProperty(renderedImages[attribute])) {
+				renderedImages[attribute] = 'background-image: url(' + avtObject[renderedImages[attribute]] + ')';
+			}
+			else{
+				renderedImages[attribute] = 'background-image: url(' + renderedImages[attribute]+ ')';
+			}
+
+		}
+
+		data.renderedImages = renderedImages;
+	}
+})();]]></script>
+        <servicenow>false</servicenow>
+        <sys_class_name>sp_widget</sys_class_name>
+        <sys_created_by>TNGUYEN640</sys_created_by>
+        <sys_created_on>2023-06-05 19:19:07</sys_created_on>
+        <sys_id>bed746b0075729100eb2f61d7c1ed0be</sys_id>
+        <sys_mod_count>526</sys_mod_count>
+        <sys_name>[Normal Mode] - Introduction section</sys_name>
+        <sys_package display_value="Capability" source="x_292088_capabil_0">dd08f9b007bc11500eb2f61d7c1ed0e9</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Capability">dd08f9b007bc11500eb2f61d7c1ed0e9</sys_scope>
+        <sys_update_name>sp_widget_bed746b0075729100eb2f61d7c1ed0be</sys_update_name>
+        <sys_updated_by>HTRAN210</sys_updated_by>
+        <sys_updated_on>2023-06-09 06:56:24</sys_updated_on>
+        <template><![CDATA[<div class="capability-featured container-fluid" ng-if="data.mode !== 'avenger'">
+  <div class="row capability-featured-wrap">
+    <div class="col-md-6 make-center">
+      <div class="capability-featured-left-content">
+        <div class="left-text-box">
+          <div class="left-header-text">
+            <p>Capability Team</p>
+          </div>
+          <div class="left-normal-text">
+            <p>Whether you're here to ask questions, build up your
+              skills, or explore ServiceNow, we're here to support your growth. Unlock your potential and became an ServiceNow expert!
+            </p>
+          </div>
+          <div class="left-avengers-button">
+            <div class="btn-container">
+              <div class="btn btn-mode" ng-click="c.switchMode('avenger')"><a href>${Avenger Mode}</a></div>
+            </div>		
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-6 capability-featured-right">
+      <div class="featured-member make-center">
+        <div class="cap-grid-wrapper">
+          <div class="cap-image-container cap-one image-loader-x-axis"
+               style = {{data.renderedImages.image1}}></div>
+          <div class="cap-image-container cap-two image-loader-y-axis"
+               style = {{data.renderedImages.image2}}></div>
+          <div class="cap-image-container cap-three image-loader-y-axis"
+               style = {{data.renderedImages.image3}}></div>
+          <div class="cap-image-container cap-four image-loader-x-axis"
+               style = {{data.renderedImages.image4}}></div>
+          <div class="cap-image-container cap-five image-loader-y-axis" 
+               style = {{data.renderedImages.image5}}></div>
+          <div class="cap-image-container cap-six image-loader-y-axis" 
+               style = {{data.renderedImages.image6}}></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>]]></template>
+    </sp_widget>
+</record_update>
