@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sp_page_route_map">
+    <sp_page_route_map action="INSERT_OR_UPDATE">
+        <active>true</active>
+        <order>10</order>
+        <portals/>
+        <route_from_page display_value="capability">7280177e074d95900eb2f61d7c1ed0b6</route_from_page>
+        <route_to_page display_value="new_capability_1">c486e9f407dbe5100eb2f61d7c1ed038</route_to_page>
+        <short_description>Capability Page</short_description>
+        <sys_class_name>sp_page_route_map</sys_class_name>
+        <sys_created_by>DTRAN88</sys_created_by>
+        <sys_created_on>2023-06-06 07:59:35</sys_created_on>
+        <sys_id>32f5fcc9079be9100eb2f61d7c1ed0b9</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>7280177e074d95900eb2f61d7c1ed0b6</sys_name>
+        <sys_package display_value="Capability" source="x_292088_capabil_0">dd08f9b007bc11500eb2f61d7c1ed0e9</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Capability">dd08f9b007bc11500eb2f61d7c1ed0e9</sys_scope>
+        <sys_update_name>sp_page_route_map_32f5fcc9079be9100eb2f61d7c1ed0b9</sys_update_name>
+        <sys_updated_by>DTRAN88</sys_updated_by>
+        <sys_updated_on>2023-06-06 07:59:35</sys_updated_on>
+    </sp_page_route_map>
+</record_update>
