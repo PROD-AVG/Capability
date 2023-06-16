@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sp_css_include">
+    <sp_css_include action="INSERT_OR_UPDATE">
+        <name>owl.theme.default.min.css</name>
+        <source>local</source>
+        <sp_css display_value="owl.theme.default.min.css">d7f3a0a4071f61100eb2f61d7c1ed01f</sp_css>
+        <sys_class_name>sp_css_include</sys_class_name>
+        <sys_created_by>HTRAN204</sys_created_by>
+        <sys_created_on>2023-06-04 17:23:55</sys_created_on>
+        <sys_id>f2e364a8071f61100eb2f61d7c1ed04a</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>owl.theme.default.min.css</sys_name>
+        <sys_package display_value="Capability" source="x_292088_capabil_0">dd08f9b007bc11500eb2f61d7c1ed0e9</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Capability">dd08f9b007bc11500eb2f61d7c1ed0e9</sys_scope>
+        <sys_update_name>sp_css_include_f2e364a8071f61100eb2f61d7c1ed04a</sys_update_name>
+        <sys_updated_by>HTRAN204</sys_updated_by>
+        <sys_updated_on>2023-06-04 17:23:55</sys_updated_on>
+        <url/>
+    </sp_css_include>
+</record_update>
