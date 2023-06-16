@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sp_js_include">
+    <sp_js_include action="INSERT_OR_UPDATE">
+        <display_name>jquery-2.2.4.min.js</display_name>
+        <source>url</source>
+        <sys_class_name>sp_js_include</sys_class_name>
+        <sys_created_by>HTRAN204</sys_created_by>
+        <sys_created_on>2023-06-04 17:20:50</sys_created_on>
+        <sys_id>bdd2e4a4071f61100eb2f61d7c1ed09b</sys_id>
+        <sys_mod_count>2</sys_mod_count>
+        <sys_name>jquery-2.2.4.min.js</sys_name>
+        <sys_package display_value="Capability" source="x_292088_capabil_0">dd08f9b007bc11500eb2f61d7c1ed0e9</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Capability">dd08f9b007bc11500eb2f61d7c1ed0e9</sys_scope>
+        <sys_ui_script display_value="x_292088_capabil_0.jquery.min.js">b7e2a8a4071f61100eb2f61d7c1ed07f</sys_ui_script>
+        <sys_update_name>sp_js_include_bdd2e4a4071f61100eb2f61d7c1ed09b</sys_update_name>
+        <sys_updated_by>HTRAN204</sys_updated_by>
+        <sys_updated_on>2023-06-04 18:49:35</sys_updated_on>
+        <url>https://code.jquery.com/jquery-2.2.4.min.js</url>
+    </sp_js_include>
+</record_update>
