@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sp_css">
+    <sp_css action="INSERT_OR_UPDATE">
+        <css>.modal-popupFullScreen {&#13;
+    max-width: 100%;&#13;
+    margin: 0;&#13;
+    background: 'none';&#13;
+    padding: 0;&#13;
+}&#13;
+.modal-popupFullScreen .modal-body{&#13;
+  padding: 0;&#13;
+}&#13;
+.modal-open .modal {&#13;
+ overflow: hidden !important;&#13;
+}</css>
+        <name>popupFullScreen.css</name>
+        <sys_class_name>sp_css</sys_class_name>
+        <sys_created_by>DDOAN30</sys_created_by>
+        <sys_created_on>2023-06-06 07:25:46</sys_created_on>
+        <sys_id>b04e2c09071be9100eb2f61d7c1ed0ef</sys_id>
+        <sys_mod_count>5</sys_mod_count>
+        <sys_name>popupFullScreen.css</sys_name>
+        <sys_package display_value="Capability" source="x_292088_capabil_0">dd08f9b007bc11500eb2f61d7c1ed0e9</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Capability">dd08f9b007bc11500eb2f61d7c1ed0e9</sys_scope>
+        <sys_update_name>sp_css_b04e2c09071be9100eb2f61d7c1ed0ef</sys_update_name>
+        <sys_updated_by>HTRAN210</sys_updated_by>
+        <sys_updated_on>2023-06-09 07:50:37</sys_updated_on>
+    </sp_css>
+</record_update>
