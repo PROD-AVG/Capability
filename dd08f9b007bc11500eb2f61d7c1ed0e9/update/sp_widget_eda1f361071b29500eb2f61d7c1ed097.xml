@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sp_widget">
+    <sp_widget action="INSERT_OR_UPDATE">
+        <category>custom</category>
+        <client_script><![CDATA[api.controller=function() {
+  /* widget controller */
+  var c = this;
+};]]></client_script>
+        <controller_as>c</controller_as>
+        <css>.avenger-navlinks-container {&#13;
+  color: #000;&#13;
+  padding: 0 5%;&#13;
+}&#13;
+&#13;
+.avenger-navlinks-container .container,&#13;
+.avenger-navlinks-container .container-fluid {&#13;
+  width: 100%;&#13;
+  position: static;&#13;
+}&#13;
+&#13;
+.dxc-color {&#13;
+  color: #5F249F;&#13;
+  font-size: 34px;&#13;
+}&#13;
+&#13;
+.avenger-navlinks-container .row {&#13;
+  display: flex;&#13;
+  flex-wrap: wrap;&#13;
+  position: static;&#13;
+}&#13;
+&#13;
+.cmp-navlinks__wrapper {&#13;
+  display: flex;&#13;
+}&#13;
+&#13;
+.cmp-navlinks__item {&#13;
+  display: flex;&#13;
+  align-items: center;&#13;
+  padding: 4rem 3rem;&#13;
+  padding-left: 0;&#13;
+}&#13;
+&#13;
+.cmp-navlinks__item img {&#13;
+  width: 60px;&#13;
+  height: 60px;&#13;
+}&#13;
+.cmp-navlinks__item_description{&#13;
+&#13;
+  margin-left: 20px&#13;
+}&#13;
+&#13;
+.cmp-navlinks__item_description h5 {&#13;
+  font-family: "Outfit", sans-serif;&#13;
+  font-size: 26px;&#13;
+  font-weight: 800;&#13;
+  margin-top: 25px;&#13;
+&#13;
+}&#13;
+&#13;
+.body-font-small {&#13;
+  margin-top: 16px;&#13;
+  margin-bottom: 8px;&#13;
+  font-family: 'Outfit', sans-serif;&#13;
+}&#13;
+</css>
+        <data_table>sp_instance</data_table>
+        <demo_data/>
+        <description/>
+        <docs/>
+        <field_list/>
+        <has_preview>false</has_preview>
+        <id>feature_introduction_normal</id>
+        <internal>false</internal>
+        <link><![CDATA[function link(scope, element, attrs, controller) {
+  
+}]]></link>
+        <name>Feature Introduction Normal</name>
+        <option_schema/>
+        <public>false</public>
+        <roles/>
+        <script><![CDATA[(function() {
+  /* populate the 'data' object */
+  /* e.g., data.table = $sp.getValue('table'); */
+	data.mode = $sp.getParameter('mode');
+
+})();]]></script>
+        <servicenow>false</servicenow>
+        <sys_class_name>sp_widget</sys_class_name>
+        <sys_created_by>DDOAN30</sys_created_by>
+        <sys_created_on>2023-06-08 10:56:36</sys_created_on>
+        <sys_id>eda1f361071b29500eb2f61d7c1ed097</sys_id>
+        <sys_mod_count>22</sys_mod_count>
+        <sys_name>Feature Introduction Normal</sys_name>
+        <sys_package display_value="Capability" source="x_292088_capabil_0">dd08f9b007bc11500eb2f61d7c1ed0e9</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Capability">dd08f9b007bc11500eb2f61d7c1ed0e9</sys_scope>
+        <sys_update_name>sp_widget_eda1f361071b29500eb2f61d7c1ed097</sys_update_name>
+        <sys_updated_by>HTRAN210</sys_updated_by>
+        <sys_updated_on>2023-06-12 17:04:31</sys_updated_on>
+        <template><![CDATA[<div class="avenger-navlinks-container" ng-if="data.mode !== 'avenger'">
+  <!-- AVENGER SLOGAN -->
+    <div class="cmp-navlinks">
+        <div class="container">
+            <div class="row">
+                <div class="col-12 cmp-navlinks__wrapper">
+                    <div class="cmp-navlinks__item">
+                        <img src="raiseUp.png"
+                            class="cmp-navlinks__item_icon">
+                        <div class="cmp-navlinks__item_description">
+                          <h5><span class="dxc-color">D</span><span>iscover our capability</span></h5>
+                            <p class="body-font-small">Our page presents a display of our expertise and proficiencies, available for you to discover and reach out at your convenience.</p>
+                        </div>
+                    </div>
+                    <div class="cmp-navlinks__item"> <img
+                            src="expertProgram.png" 
+                            class="cmp-navlinks__item_icon">
+                        <div class="cmp-navlinks__item_description">
+                          <h5>e<span class="dxc-color">X</span><span>cellent team</span></h5>
+                            <p class="body-font-small">Our team of experts comprises individuals who possess extensive training and years of experience, reflecting our commitment to excellence.</p>
+                        </div>
+                    </div>
+                    <div class="cmp-navlinks__item">
+                        <img src="collectionResource.png"
+                            class="cmp-navlinks__item_icon">
+                        <div class="cmp-navlinks__item_description">
+                          <h5><span class="dxc-color">C</span><span>ollection of resources</span></h5>
+                            <p class="body-font-small">Find useful resources that are readily available to assist you in addressing any inquiries you may have.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>]]></template>
+    </sp_widget>
+</record_update>
