@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sp_instance">
+    <sp_instance action="INSERT_OR_UPDATE">
+        <active>true</active>
+        <class_name/>
+        <color>default</color>
+        <css/>
+        <glyph/>
+        <id/>
+        <order>1</order>
+        <roles/>
+        <short_description/>
+        <size>md</size>
+        <sp_column display_value="1">de33ea30079f29100eb2f61d7c1ed01a</sp_column>
+        <sp_widget display_value="[Normal Mode] - Introduction section">bed746b0075729100eb2f61d7c1ed0be</sp_widget>
+        <sys_class_name>sp_instance</sys_class_name>
+        <sys_created_by>TNGUYEN640</sys_created_by>
+        <sys_created_on>2023-06-05 21:22:17</sys_created_on>
+        <sys_id>0d346e74079f29100eb2f61d7c1ed00f</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name/>
+        <sys_package display_value="Capability" source="x_292088_capabil_0">dd08f9b007bc11500eb2f61d7c1ed0e9</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Capability">dd08f9b007bc11500eb2f61d7c1ed0e9</sys_scope>
+        <sys_update_name>sp_instance_0d346e74079f29100eb2f61d7c1ed00f</sys_update_name>
+        <sys_updated_by>TNGUYEN640</sys_updated_by>
+        <sys_updated_on>2023-06-05 21:22:17</sys_updated_on>
+        <title/>
+        <url/>
+        <widget_parameters/>
+    </sp_instance>
+    <sys_translated_text action="delete_multiple" query="documentkey=0d346e74079f29100eb2f61d7c1ed00f"/>
+</record_update>
