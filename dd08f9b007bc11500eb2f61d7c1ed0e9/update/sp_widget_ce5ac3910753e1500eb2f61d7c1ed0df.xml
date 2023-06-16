@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sp_widget">
+    <sp_widget action="INSERT_OR_UPDATE">
+        <category>custom</category>
+        <client_script><![CDATA[api.controller=function() {
+  /* widget controller */
+  var c = this;
+};]]></client_script>
+        <controller_as>c</controller_as>
+        <css>.avenger-navlinks-container {
+  color: white;
+  padding: 0 5%;
+  margin-top: 20px;
+}
+
+.avenger-navlinks-container .container,
+.avenger-navlinks-container .container-fluid {
+  width: 100%;
+  position: static;
+}
+
+.avenger-navlinks-container .row {
+  display: flex;
+  flex-wrap: wrap;
+  position: static;
+}
+
+.cmp-navlinks__wrapper {
+  display: flex;
+}
+
+.cmp-navlinks__item {
+  	text-align: center;
+    padding: 4rem 3rem
+}
+
+.cmp-navlinks__item img {
+	width: 60px;
+  height: 60px;
+}
+
+.cmp-navlinks__item_description h5 {
+  font-family: "Outfit", sans-serif;
+  font-size: 26px;
+  font-weight: 800;
+  margin-top: 25px;
+}
+
+.body-font-small {
+  margin-top: 16px;
+  margin-bottom: 8px;
+  font-family: 'Outfit', sans-serif;
+}
+</css>
+        <data_table>sp_instance</data_table>
+        <demo_data/>
+        <description/>
+        <docs/>
+        <field_list/>
+        <has_preview>false</has_preview>
+        <id>avenger_navlink</id>
+        <internal>false</internal>
+        <link><![CDATA[function link(scope, element, attrs, controller) {
+  
+}]]></link>
+        <name>Avenger Navlink</name>
+        <option_schema/>
+        <public>false</public>
+        <roles/>
+        <script><![CDATA[(function() {
+  /* populate the 'data' object */
+  /* e.g., data.table = $sp.getValue('table'); */
+
+})();]]></script>
+        <servicenow>false</servicenow>
+        <sys_class_name>sp_widget</sys_class_name>
+        <sys_created_by>HLE211</sys_created_by>
+        <sys_created_on>2023-06-07 13:27:02</sys_created_on>
+        <sys_id>ce5ac3910753e1500eb2f61d7c1ed0df</sys_id>
+        <sys_mod_count>23</sys_mod_count>
+        <sys_name>Avenger Navlink</sys_name>
+        <sys_package display_value="Capability" source="x_292088_capabil_0">dd08f9b007bc11500eb2f61d7c1ed0e9</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Capability">dd08f9b007bc11500eb2f61d7c1ed0e9</sys_scope>
+        <sys_update_name>sp_widget_ce5ac3910753e1500eb2f61d7c1ed0df</sys_update_name>
+        <sys_updated_by>HLE211</sys_updated_by>
+        <sys_updated_on>2023-06-08 16:25:03</sys_updated_on>
+        <template><![CDATA[<div class="avenger-navlinks-container">
+  <!-- AVENGER SLOGAN -->
+    <div class="cmp-navlinks">
+        <div class="container">
+            <div class="row">
+                <div class="col-12 cmp-navlinks__wrapper">
+                    <div class="cmp-navlinks__item">
+                        <img src="AvengerStarIcon.png"
+                            class="cmp-navlinks__item_icon">
+                        <div class="cmp-navlinks__item_description">
+                            <h5>Deliver the best</h5>
+                            <p class="body-font-small">We pledge to be your trusty companion and extend a helping
+                                hand whenever you need it.</p>
+                        </div>
+                    </div>
+                    <div class="cmp-navlinks__item"> <img
+                            src="AvengerHeroIcon.png" 
+                            class="cmp-navlinks__item_icon">
+                        <div class="cmp-navlinks__item_description">
+                            <h5>eXcellent team</h5>
+                            <p class="body-font-small">Our squad is brimming with remarkable individuals who possess
+                                exceptional skills and unparalleled expertise.</p>
+                        </div>
+                    </div>
+                    <div class="cmp-navlinks__item">
+                        <img src="AvengerSpiderManIcon.png"
+                            class="cmp-navlinks__item_icon">
+                        <div class="cmp-navlinks__item_description">
+                            <h5>Collection of resources</h5>
+                            <p class="body-font-small">Discover top-notch tools and solutions at your fingertips to unlock the power of ServiceNow in you.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>]]></template>
+    </sp_widget>
+</record_update>
