@@ -1,0 +1,239 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sp_widget">
+    <sp_widget action="INSERT_OR_UPDATE">
+        <category>custom</category>
+        <client_script><![CDATA[api.controller=function() {
+  /* widget controller */
+  var c = this;
+	spModal.open({
+		widget: 'cap_popup',
+		button: [],
+		size: 'xl'
+	});
+};]]></client_script>
+        <controller_as>c</controller_as>
+        <css>.cap-info-content {
+    font-stretch: expanded;
+}
+.cap-block {
+    height: 35vh;
+}
+
+.cap-block .cap-block-element {
+    height: 100%;
+}
+
+.avatar img {
+    width: 80%;
+    height: 110%;
+}
+
+.cap-info {
+    display: flex;
+    align-items: center;
+}
+
+.cap-info-content {
+    width: 100%;
+}
+
+.info-right .cap-info-content {
+    padding-left: 5%;
+}
+
+.info-left .cap-info-content {
+    text-align: right;
+    padding-right: 5%;
+}
+
+.emerald, .violet .cap-info-content {
+    color: white;
+}
+
+.cap-name {
+    padding-top: 1%;
+}
+
+.know-more {
+    padding-top: 2%;
+}
+
+.cap-info .captain {
+    font-weight: 700;
+    font-size: 13px;
+}
+
+.cap-info .cap-name {
+    font-weight: 700;
+    font-size: 32px;
+}
+
+.cap-info .know-more {
+    font-weight: 700;
+    font-size: 15px;
+}
+
+.blue .more-info {
+    background-color: #6DB1DA;
+}
+
+.blue .avatar {
+    background-color: #93C3E3;
+}
+
+.blue .cap-info {
+    background-color: #2687C8;
+}
+
+.violet .more-info {
+    background-color: #7444AB;
+}
+
+.violet .avatar {
+    background-color: #AB8BCB;
+}
+
+.violet .cap-info {
+    background-color: #5F249F;
+}
+
+.white .more-info {
+    background-color: #E2E2E3;
+}
+
+.white .avatar {
+    background-color: #D3D4D5;
+}
+
+.white .cap-info {
+    background-color: #FEFEFE;
+}
+
+.orange .more-info {
+    background-color: #FFD351;
+}
+
+.orange .avatar {
+    background-color: #FFE69C;
+}
+
+.orange .cap-info {
+    background-color: #FFC107;
+}
+
+.green .more-info {
+    background-color: #88E781;
+}
+
+.green .avatar {
+    background-color: #BDEBB9;
+}
+
+.green .cap-info {
+    background-color: #79CE74;
+}
+
+.emerald .more-info {
+    background-color: #213C4C;
+}
+
+.emerald .avatar {
+    background-color: #5D7783;
+}
+
+.emerald .cap-info {
+    background-color: #062D43;
+}
+
+
+
+</css>
+        <data_table>sp_instance</data_table>
+        <demo_data/>
+        <description/>
+        <docs/>
+        <field_list/>
+        <has_preview>true</has_preview>
+        <id>clone_list_captains_normal_model</id>
+        <internal>false</internal>
+        <link><![CDATA[function link(scope, element, attrs, controller) {
+  
+}]]></link>
+        <name>Copy of List of Captains</name>
+        <option_schema/>
+        <public>false</public>
+        <roles/>
+        <script><![CDATA[(function() {
+  /* populate the 'data' object */
+  /* e.g., data.table = $sp.getValue('table'); */
+	var colorList = ['blue', 'violet', 'white', 'orange', 'green', 'emerald'];
+	data.capability = [];
+	
+	var grCap = new GlideRecord('cmdb_ci_business_capability');
+	grCap.addQuery('x_292088_capabil_0_cap_lead', '!=', 'NULL');
+	grCap.addQuery('hierarchy_level', '1');
+	grCap.query();
+	
+	var count = 0;
+
+	while (grCap.next()){
+		var capData = {};
+		capData.name = grCap.name.toString();
+		capData.lead = grCap.x_292088_capabil_0_cap_lead.user_name.toString();
+		
+		if (count % 2 === 0){
+			capData.sideClass = 'info-right';
+		} else {
+			capData.sideClass = 'info-left';
+		}
+		
+		capData.colorClass = colorList[count % colorList.length];
+		
+		data.capability.push(capData);
+		count += 1;
+	}
+
+})();]]></script>
+        <servicenow>false</servicenow>
+        <sys_class_name>sp_widget</sys_class_name>
+        <sys_created_by>DDOAN30</sys_created_by>
+        <sys_created_on>2023-06-06 04:01:58</sys_created_on>
+        <sys_id>63affb34079ba9100eb2f61d7c1ed05c</sys_id>
+        <sys_mod_count>7</sys_mod_count>
+        <sys_name>Copy of List of Captains</sys_name>
+        <sys_package display_value="Capability" source="x_292088_capabil_0">dd08f9b007bc11500eb2f61d7c1ed0e9</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Capability">dd08f9b007bc11500eb2f61d7c1ed0e9</sys_scope>
+        <sys_update_name>sp_widget_63affb34079ba9100eb2f61d7c1ed05c</sys_update_name>
+        <sys_updated_by>DDOAN30</sys_updated_by>
+        <sys_updated_on>2023-06-06 06:28:56</sys_updated_on>
+        <template><![CDATA[<div class="container-fluid" id="cap-list" ng-repeat="capData in data.capability">
+    <div class="row cap-block" id="csm" ng-class="capData.colorClass" ng-if="capData.sideClass=='info-right'">
+        <div class="col-md-3 cap-block-element more-info"></div>
+        <div class="col-md-3 cap-block-element avatar text-center">
+            <img src="cartoon-me.png" alt="CSM Cap Lead">
+        </div>
+        <div class="col-md-6 cap-block-element cap-info" ng-class="capData.sideClass">
+            <div class="cap-info-content">
+                <div class="captain">{{capData.lead}}</div>
+                <div class="cap-name">{{capData.name}}</div>
+                <div class="know-more"> Get to know more +</div>
+            </div>
+        </div>
+    </div>
+  
+  	<div class="row cap-block" id="csm" ng-class="capData.colorClass" ng-if="capData.sideClass=='info-left'">
+    		<div class="col-md-6 cap-block-element cap-info" ng-class="capData.sideClass">
+            <div class="cap-info-content">
+                <div class="captain">{{capData.lead}}</div>
+                <div class="cap-name">{{capData.name}}</div>
+                <div class="know-more"> Get to know more +</div>
+            </div>
+        </div>
+      	<div class="col-md-3 cap-block-element avatar text-center">
+            <img src="Image\now-intelligence.png" alt="CSM Cap Lead">
+        </div> 
+        <div class="col-md-3 cap-block-element more-info"></div>     
+    </div>
+</div>]]></template>
+    </sp_widget>
+</record_update>
