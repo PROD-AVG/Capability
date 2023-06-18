@@ -398,14 +398,14 @@
         <sys_created_by>DTRAN88</sys_created_by>
         <sys_created_on>2023-06-06 08:02:55</sys_created_on>
         <sys_id>11d6fcc9079be9100eb2f61d7c1ed0bc</sys_id>
-        <sys_mod_count>135</sys_mod_count>
+        <sys_mod_count>140</sys_mod_count>
         <sys_name>Avenger Main</sys_name>
         <sys_package display_value="Capability" source="x_292088_capabil_0">dd08f9b007bc11500eb2f61d7c1ed0e9</sys_package>
         <sys_policy/>
         <sys_scope display_value="Capability">dd08f9b007bc11500eb2f61d7c1ed0e9</sys_scope>
         <sys_update_name>sp_widget_11d6fcc9079be9100eb2f61d7c1ed0bc</sys_update_name>
-        <sys_updated_by>HTRAN210</sys_updated_by>
-        <sys_updated_on>2023-06-12 17:11:59</sys_updated_on>
+        <sys_updated_by>DTRAN88</sys_updated_by>
+        <sys_updated_on>2023-06-14 08:53:29</sys_updated_on>
         <template><![CDATA[<div class="container main-container" ng-if="data.mode == 'avenger' && !data.capSysId">
   <sp-widget widget="data.introductionWidget"/>
 </div> 
@@ -473,9 +473,9 @@
       </div>
       <div class="vice-cap-content">
         <div class='vice-cap' ng-repeat='subLead in data.captainSubLead'>
-          <div>
+          <a href="https://teams.microsoft.com/l/chat/0/0?users={{subLead.email}}" target="_blank">
             <img src="{{subLead.avatar}}" alt="vice-cap-icon" class="vice-cap-icon cap-img">
-          </div>
+          </a>
           <div class="vice-cap-name field-value">{{subLead.name}}</div>
           <div class="vice-cap-info">Email: {{subLead.email}}</div>
         </div>
