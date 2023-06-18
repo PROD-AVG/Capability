@@ -190,7 +190,7 @@
   min-width: 170px;&#13;
   display: flex;&#13;
   justify-content: center;&#13;
-  background-color: #5f249e;&#13;
+  /*background-color: #006ec3;*/&#13;
   background: #fff;&#13;
   background-color: none;&#13;
   border: 2px solid #fff;&#13;
@@ -212,21 +212,38 @@
   left: 0;&#13;
   width: 100%;&#13;
   height: 0%;&#13;
-  background: #fff;&#13;
+  /*background: #fff;&#13;
   background-color: #5f249e;&#13;
+  background-color: #2687c8;*/&#13;
   color: #fff;&#13;
   transition: 0.8s;&#13;
   z-index: -1;&#13;
+}&#13;
+.pp-left .team-chat::before{&#13;
+  background-color: #5f249e;&#13;
+}&#13;
+.pp-left .outlook-chat::before{&#13;
+  background-color: #2687c8;&#13;
 }&#13;
 &#13;
 .pp-left .team-chat{&#13;
   color: #7b83eb;&#13;
 &#13;
 }&#13;
+.pp-left .outlook-chat{&#13;
+  color: #006ec3;&#13;
+&#13;
+}&#13;
+.pp-left .team-chat:hover{&#13;
+  border: 2px solid #ab8bcb;&#13;
+}&#13;
+.pp-left .outlook-chat:hover{&#13;
+  border: 2px solid #93C3E3&#13;
+}&#13;
+&#13;
 .pp-left .team-chat:hover,&#13;
 .pp-left .outlook-chat:hover{&#13;
   color: #fff;&#13;
-  border: 2px solid #ab8bcb;&#13;
   box-shadow: rgba(50, 50, 93, 0.25) 0px 30px 60px -12px inset, rgba(0, 0, 0, 0.3) 0px 18px 36px -18px inset;&#13;
 &#13;
 }&#13;
@@ -234,10 +251,7 @@
 .pp-left .outlook-chat:hover img{&#13;
   border: none;&#13;
 }&#13;
-.pp-left .outlook-chat{&#13;
-  color: #006ec3;&#13;
 &#13;
-}&#13;
 .pp-left .team-chat::before,&#13;
 .pp-left .outlook-chat::before{&#13;
   top: 0;&#13;
@@ -587,14 +601,14 @@ color: #fff;&#13;
         <sys_created_by>DDOAN30</sys_created_by>
         <sys_created_on>2023-06-05 14:39:37</sys_created_on>
         <sys_id>d2e7c5340793e5100eb2f61d7c1ed00e</sys_id>
-        <sys_mod_count>350</sys_mod_count>
+        <sys_mod_count>358</sys_mod_count>
         <sys_name>The Capability Details Popup</sys_name>
         <sys_package display_value="Capability" source="x_292088_capabil_0">dd08f9b007bc11500eb2f61d7c1ed0e9</sys_package>
         <sys_policy/>
         <sys_scope display_value="Capability">dd08f9b007bc11500eb2f61d7c1ed0e9</sys_scope>
         <sys_update_name>sp_widget_d2e7c5340793e5100eb2f61d7c1ed00e</sys_update_name>
-        <sys_updated_by>TVU59</sys_updated_by>
-        <sys_updated_on>2023-06-13 10:35:37</sys_updated_on>
+        <sys_updated_by>DDOAN30</sys_updated_by>
+        <sys_updated_on>2023-06-14 10:18:28</sys_updated_on>
         <template><![CDATA[<!-- your widget template -->
         <div class="pop-main" ng-class="data.colorClass" id="show-hide">
             <div class="pp-left">
