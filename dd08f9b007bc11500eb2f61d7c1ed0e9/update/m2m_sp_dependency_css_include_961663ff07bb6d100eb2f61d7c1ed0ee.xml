@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="m2m_sp_dependency_css_include">
+    <m2m_sp_dependency_css_include action="INSERT_OR_UPDATE">
+        <order>100</order>
+        <sp_css_include display_value="Hover-css">07066f3307fb6d100eb2f61d7c1ed04d</sp_css_include>
+        <sp_dependency display_value="Hover-css">54d52f3f07bb6d100eb2f61d7c1ed021</sp_dependency>
+        <sys_class_name>m2m_sp_dependency_css_include</sys_class_name>
+        <sys_created_by>NNGUYEN263</sys_created_by>
+        <sys_created_on>2023-07-10 06:23:22</sys_created_on>
+        <sys_id>961663ff07bb6d100eb2f61d7c1ed0ee</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>Hover-css.Hover-css</sys_name>
+        <sys_package display_value="Capability" source="x_292088_capabil_0">dd08f9b007bc11500eb2f61d7c1ed0e9</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Capability">dd08f9b007bc11500eb2f61d7c1ed0e9</sys_scope>
+        <sys_update_name>m2m_sp_dependency_css_include_961663ff07bb6d100eb2f61d7c1ed0ee</sys_update_name>
+        <sys_updated_by>NNGUYEN263</sys_updated_by>
+        <sys_updated_on>2023-07-10 06:23:22</sys_updated_on>
+    </m2m_sp_dependency_css_include>
+</record_update>
