@@ -15,7 +15,21 @@
 		headerStyle: {display: "none"},
 		footerStyle: {display: "none"},
 	});
-	}	
+	};
+	c.learngPath = function(name,color){
+		spModal.open({
+			widget: 'cap_learning_path',
+// 			size: 'CaplearningPath',
+			size: 'popupFullScreen',
+			widgetInput:{
+				name: name,
+				color: color
+			},
+			headerStyle: {display: "none"},
+			footerStyle: {display: "none"},
+
+		});
+	}
 }]]></client_script>
         <controller_as>c</controller_as>
         <css>#cap-normal-mode {
@@ -83,8 +97,12 @@
 }
 
 .know-more {
-  padding-top: 2.6%;
+  // padding-top: 1.6%;
+  // padding-bottom: 4.6%;
+  padding-top: 1.6%;
+  padding-bottom: 3.5%;
   line-height: 1.9rem;
+  // line-height: 0.5rem;
 }
 
 /** TEXT EFFECT **/
@@ -113,7 +131,7 @@
 .cap-info .know-more {
   font-weight: 700;
   font-size: 1.5rem;
-  height: 2rem;
+  height: 1rem;
 }
 
 .blue .more-info {
@@ -230,14 +248,14 @@
         <sys_created_by>NDANG8</sys_created_by>
         <sys_created_on>2023-06-05 16:50:30</sys_created_on>
         <sys_id>4015adbc079be5100eb2f61d7c1ed09c</sys_id>
-        <sys_mod_count>293</sys_mod_count>
+        <sys_mod_count>392</sys_mod_count>
         <sys_name>[Normal Mode] List of Captains section</sys_name>
         <sys_package display_value="Capability" source="x_292088_capabil_0">dd08f9b007bc11500eb2f61d7c1ed0e9</sys_package>
         <sys_policy/>
         <sys_scope display_value="Capability">dd08f9b007bc11500eb2f61d7c1ed0e9</sys_scope>
         <sys_update_name>sp_widget_4015adbc079be5100eb2f61d7c1ed09c</sys_update_name>
-        <sys_updated_by>NDANG8</sys_updated_by>
-        <sys_updated_on>2023-06-12 15:48:47</sys_updated_on>
+        <sys_updated_by>DDOAN30</sys_updated_by>
+        <sys_updated_on>2023-08-03 08:24:43</sys_updated_on>
         <template><![CDATA[<div id="cap-normal-mode" ng-if="data.mode !== 'avenger'">
   	<div id="title-normal-mode">
       ${It's time to meet our} <span class="captain-text">${Captains}</span>
@@ -254,6 +272,10 @@
                     <div class="captain">Captain {{capData.lead}}</div>
                     <div class="cap-name">{{capData.name}}</div>
                     <div class="know-more" ng-click="c.onAlert(capData.name,capData.colorClass)"> <span> Get to know more + </span> </div>
+                    <div class="know-more" ng-click="c.learngPath(capData.name,capData.colorClass)"> <span> Learning Path +</span> </div>
+                    <!-- <div>
+                        <button type="button" class="btn btn-primary" ng-click="c.learngPath(capData.name,capData.colorClass)">Learning Path</button>
+                    </div> -->
                 </div>
             </div>
         </div>
@@ -264,6 +286,10 @@
                     <div class="captain">Captain {{capData.lead}}</div>
                     <div class="cap-name">{{capData.name}}</div>
                     <div class="know-more" ng-click="c.onAlert(capData.name,capData.colorClass)"> <span> Get to know more + </span> </div>
+                    <div class="know-more" ng-click="c.learngPath(capData.name,capData.colorClass)"> <span> Learning Path </span> </div>
+                    <!-- <div>
+                        <button type="button" class="btn btn-primary" ng-click="c.learngPath(capData.name,capData.colorClass)">Learning Path</button>
+                    </div> -->
                 </div>
             </div>
             <div class="col-xs-3 cap-block-element cap-lead-avatar text-center">
