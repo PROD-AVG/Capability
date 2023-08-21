@@ -1,0 +1,739 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sp_widget">
+    <sp_widget action="INSERT_OR_UPDATE">
+        <category>custom</category>
+        <client_script><![CDATA[api.controller = function($uibModal, $scope, $sce, $element,$timeout ) {
+    var c = this;
+    c.closeWidget = function() {
+        $scope.server.get({
+            widget: 'data.widget_id'
+        });
+        $scope.$parent.$parent.$dismiss();
+    };
+    c.trustHtml = function(html) {
+        return $sce.trustAsHtml(html);
+    };
+};]]></client_script>
+        <controller_as>c</controller_as>
+        <css>@import url("https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;800;900&amp;display=swap");&#13;
+@import url("href='https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css'");&#13;
+// {&#13;
+//     margin: 0px;&#13;
+//     padding: 0px;&#13;
+//     box-sizing: border-box;&#13;
+// }&#13;
+&#13;
+#show-hide {&#13;
+  font-family: "Outfit", sans-serif;&#13;
+  font-size: 20px;&#13;
+  line-height: 1.4;&#13;
+&#13;
+  /*font-family: 'Century Gothic', sans-serif;*/&#13;
+}&#13;
+&#13;
+&#13;
+.pop-main {&#13;
+  width: 100%;&#13;
+  height: 100vh;&#13;
+  overflow: hidden !important;&#13;
+  display: flex;&#13;
+  justify-content: center;&#13;
+&#13;
+}&#13;
+&#13;
+/*violet,white,orange,green,emerald*/&#13;
+.blue .pp-left {&#13;
+  background: #6db1da;&#13;
+  color: #062d43;&#13;
+}&#13;
+&#13;
+.blue .pp-right-header,&#13;
+.blue .pp-left-img {&#13;
+  background: #2687c8;&#13;
+&#13;
+}&#13;
+&#13;
+.blue .header-content {&#13;
+  color: #062d43 !important;&#13;
+}&#13;
+&#13;
+.violet .pp-left {&#13;
+  background: #7444ab;&#13;
+}&#13;
+&#13;
+.violet .pp-right-header,&#13;
+.violet .pp-left-img {&#13;
+  background: #5f249f;&#13;
+}&#13;
+&#13;
+.white .pp-left {&#13;
+  background: #fefefe;&#13;
+  color: #062d43;&#13;
+}&#13;
+&#13;
+.white .header-content {&#13;
+  color: #062d43 !important;&#13;
+}&#13;
+&#13;
+.white .pp-right-header,&#13;
+.white .pp-left-img {&#13;
+  background: #d3d4d5;&#13;
+}&#13;
+&#13;
+.orange .pp-left {&#13;
+  background: #ffd351;&#13;
+  color: #062d43;&#13;
+}&#13;
+&#13;
+.orange .pp-right-header,&#13;
+.orange .pp-left-img {&#13;
+  background: #ffc107;&#13;
+&#13;
+}&#13;
+&#13;
+.orange .header-content {&#13;
+  color: #062d43 !important;&#13;
+}&#13;
+&#13;
+.green .pp-left {&#13;
+  background: #88e781;&#13;
+  color: #062d43;&#13;
+  /* background: #699417;*/&#13;
+&#13;
+}&#13;
+&#13;
+.green .pp-right-header,&#13;
+.green .pp-left-img {&#13;
+  background: #79ce74;&#13;
+  color: #062d43;&#13;
+  /*background: #314804;*/&#13;
+&#13;
+}&#13;
+&#13;
+.green .header-content {&#13;
+  color: #062d43 !important;&#13;
+}&#13;
+&#13;
+.dark-green .pp-left {&#13;
+  background: #213c4c;&#13;
+}&#13;
+&#13;
+.dark-green .pp-right-header,&#13;
+.dark-green .pp-left-img {&#13;
+  background: #062d43;&#13;
+}&#13;
+&#13;
+// .pp-left {&#13;
+//   width: 100%;&#13;
+//   background-color: #7444AB;&#13;
+//   justify-content: start;&#13;
+//   display: flex;&#13;
+//   flex-direction: column;&#13;
+//   color: #fff;&#13;
+// }&#13;
+&#13;
+// .pp-left .pp-left-container {&#13;
+//   height: 50%;&#13;
+//   display: flex;&#13;
+//   flex-direction: row;&#13;
+//   align-items: center;&#13;
+// }&#13;
+&#13;
+// .pp-left-container .pp-left-img {&#13;
+//   display: flex;&#13;
+//   /*background-color:  #ab8bcb;*/&#13;
+//   width: 250px;&#13;
+//   height: 250px;&#13;
+//   border-radius: 50%;&#13;
+//   border: 12px solid #fff;&#13;
+//   margin: 0px 24px;&#13;
+//   flex-shrink: 0;&#13;
+//   overflow: hidden;&#13;
+&#13;
+// }&#13;
+&#13;
+// .pp-left-container .pp-left-img-detail {&#13;
+//   width: 300px;&#13;
+//   height: auto;&#13;
+&#13;
+// }&#13;
+&#13;
+&#13;
+// .pp-left .pp-left-content .content-text,&#13;
+// .pp-left-container .pp-left-info .info-email,&#13;
+// .pp-left-container .pp-left-info .info-phone {&#13;
+//   /* font-size: 20px; */&#13;
+//   font-weight: 300;&#13;
+&#13;
+&#13;
+// }&#13;
+&#13;
+// .pp-left .pp-left-content .content-text {&#13;
+//   text-align: justify;&#13;
+//   padding: 32px 52px 24px;&#13;
+&#13;
+// }&#13;
+&#13;
+// .pp-left-container .pp-left-info {&#13;
+//   padding-left: 24px;&#13;
+//   width: 50%;&#13;
+//   /* flex-shrink: 1; */&#13;
+// }&#13;
+&#13;
+// .pp-left-container .pp-left-info .info-name {&#13;
+//   font-size: 45px;&#13;
+//   font-weight: 800;&#13;
+//   margin-bottom: 16px;&#13;
+// }&#13;
+&#13;
+// .pp-left-container .pp-left-info .info-title {&#13;
+//   font-size: 28px;&#13;
+//   font-weight: 300;&#13;
+//   padding: 16px 0;&#13;
+// }&#13;
+&#13;
+// .pp-left-container .pp-left-info .info-icon {&#13;
+//   font-size: 24px;&#13;
+//   padding-right: 8px;&#13;
+// }&#13;
+&#13;
+// /* Button */&#13;
+// .pp-left .button-list {&#13;
+//   display: flex;&#13;
+//   margin-top: 30px;&#13;
+//   margin-left: -24px;&#13;
+//   justify-content: space-around;&#13;
+// }&#13;
+&#13;
+// .pp-left .button-list a {&#13;
+//   text-decoration: none;&#13;
+//   list-style-type: none;&#13;
+// }&#13;
+&#13;
+// .pp-left .button-chat {&#13;
+//   box-shadow: rgba(9, 30, 66, 0.25) 0px 4px 8px -2px, rgba(9, 30, 66, 0.08) 0px 0px 0px 1px;&#13;
+//   min-width: 170px;&#13;
+//   display: flex;&#13;
+//   justify-content: center;&#13;
+//   /*background-color: #006ec3;*/&#13;
+//   background: #fff;&#13;
+//   background-color: none;&#13;
+//   border: 2px solid #fff;&#13;
+&#13;
+//   /* color: #fff; */&#13;
+//   padding: 10px 6px;&#13;
+//   border-radius: 60px;&#13;
+//   transition: 0.5s linear;&#13;
+//   cursor: pointer;&#13;
+//   transition: 0.8s;&#13;
+//   position: relative;&#13;
+//   overflow: hidden;&#13;
+//   z-index: 1;&#13;
+&#13;
+// }&#13;
+&#13;
+// .pp-left .button-chat::before {&#13;
+//   content: "";&#13;
+//   position: absolute;&#13;
+//   left: 0;&#13;
+//   width: 100%;&#13;
+//   height: 0%;&#13;
+//   /*background: #fff;&#13;
+//   background-color: #5f249e;&#13;
+//   background-color: #2687c8;*/&#13;
+//   color: #fff;&#13;
+//   transition: 0.8s;&#13;
+//   z-index: -1;&#13;
+// }&#13;
+&#13;
+// .pp-left .team-chat::before {&#13;
+//   background-color: #5f249e;&#13;
+// }&#13;
+&#13;
+// .pp-left .outlook-chat::before {&#13;
+//   background-color: #2687c8;&#13;
+// }&#13;
+&#13;
+// .pp-left .team-chat {&#13;
+//   color: #7b83eb;&#13;
+&#13;
+// }&#13;
+&#13;
+// .pp-left .outlook-chat {&#13;
+//   color: #006ec3;&#13;
+&#13;
+// }&#13;
+&#13;
+// .pp-left .team-chat:hover {&#13;
+//   border: 2px solid #ab8bcb;&#13;
+// }&#13;
+&#13;
+// .pp-left .outlook-chat:hover {&#13;
+//   border: 2px solid #93C3E3&#13;
+// }&#13;
+&#13;
+// .pp-left .team-chat:hover,&#13;
+// .pp-left .outlook-chat:hover {&#13;
+//   color: #fff;&#13;
+//   box-shadow: rgba(50, 50, 93, 0.25) 0px 30px 60px -12px inset, rgba(0, 0, 0, 0.3) 0px 18px 36px -18px inset;&#13;
+&#13;
+// }&#13;
+&#13;
+// .pp-left .team-chat:hover img,&#13;
+// .pp-left .outlook-chat:hover img {&#13;
+//   border: none;&#13;
+// }&#13;
+&#13;
+// .pp-left .team-chat::before,&#13;
+// .pp-left .outlook-chat::before {&#13;
+//   top: 0;&#13;
+//   border-radius: 0 0 50% 50%;&#13;
+// }&#13;
+&#13;
+// .pp-left .team-chat:hover::before,&#13;
+// .pp-left .outlook-chat:hover::before {&#13;
+//   height: 180%;&#13;
+&#13;
+// }&#13;
+&#13;
+&#13;
+// .pp-left .button-list img {&#13;
+//   width: 50px;&#13;
+//   height: 40px;&#13;
+// }&#13;
+&#13;
+// .pp-left .chat-title {&#13;
+//   font-family: Verdana, Geneva, Tahoma, sans-serif;&#13;
+//   /* padding: 0 0 0 10px; */&#13;
+//   font-weight: 800;&#13;
+//   width: 50%;&#13;
+//   font-size: 16px;&#13;
+//   text-align: center;&#13;
+&#13;
+// }&#13;
+&#13;
+&#13;
+.pp-right {&#13;
+  width: 100%;&#13;
+  background-color: #fff;&#13;
+&#13;
+}&#13;
+&#13;
+.pp-right .pp-right-header {&#13;
+  width: 100%;&#13;
+  height: 140px;&#13;
+  /*background-color: #5f249f;*/&#13;
+  display: flex;&#13;
+  justify-content: space-between;&#13;
+  align-items: center;&#13;
+}&#13;
+&#13;
+.pp-right .pp-right-header .header-content-tile {&#13;
+  font-weight: 600;&#13;
+  margin-bottom: 4px;&#13;
+}&#13;
+&#13;
+.pp-right .pp-right-header .header-content {&#13;
+  color: #fff;&#13;
+  display: flex;&#13;
+  flex-direction: column;&#13;
+  justify-content: center;&#13;
+  margin-left: 48px;&#13;
+}&#13;
+&#13;
+.pp-right .header-content p {&#13;
+  padding: 0;&#13;
+}&#13;
+&#13;
+.pp-right-header .close-bar {&#13;
+  margin-right: 30px;&#13;
+}&#13;
+&#13;
+.pp-right-header .bar-icon {&#13;
+  font-size: 28px;&#13;
+  color: hsla(0, 0%, 100%, 0.5);&#13;
+  transition: 0.3s;&#13;
+  /* padding: 10px; */&#13;
+}&#13;
+&#13;
+.pp-right-header .bar-icon:hover {&#13;
+  cursor: pointer;&#13;
+  color: hsla(0, 0%, 100%, 1);&#13;
+  font-weight: 600;&#13;
+}&#13;
+&#13;
+.close-bar button {&#13;
+  background: none;&#13;
+  border: none;&#13;
+  padding-inline: 12px;&#13;
+  padding-block: 12px;&#13;
+  margin-left: 12px;&#13;
+  transition: 0.8;&#13;
+  border-radius: 2px;&#13;
+  position: relative;&#13;
+  overflow: hidden;&#13;
+  z-index: 1;&#13;
+  transition: 0.8s;&#13;
+}&#13;
+&#13;
+.close-bar .button::before {&#13;
+  content: "";&#13;
+  position: absolute;&#13;
+  left: 0;&#13;
+  width: 100%;&#13;
+  height: 100%;&#13;
+  background: hsla(360, 60%, 53%, 1);&#13;
+  z-index: -1;&#13;
+  transition: 0.8s;&#13;
+}&#13;
+&#13;
+.close-bar .bar-icon-close::before {&#13;
+  top: 0;&#13;
+  border-radius: 0 0 50% 50%;&#13;
+&#13;
+}&#13;
+&#13;
+.close-bar .bar-icon-close:hover::before {&#13;
+  height: 180%;&#13;
+}&#13;
+&#13;
+.close-bar .bar-icon-close {&#13;
+  content: "";&#13;
+&#13;
+  /* background: hsla(360, 60%, 53%, 1); */&#13;
+  /* padding: 12px; */&#13;
+}&#13;
+&#13;
+.pp-right .pp-right-content {&#13;
+  padding: 42px 48px 40px 48px;&#13;
+  background-color: #fff;&#13;
+  overflow-y: scroll;&#13;
+  height: 100%;&#13;
+}&#13;
+&#13;
+.pp-right .right-content-header {&#13;
+  font-size: 28px;&#13;
+  font-weight: 600;&#13;
+  margin-bottom: 36px;&#13;
+}&#13;
+&#13;
+.pp-right .right-content-text {&#13;
+  text-align: justify;&#13;
+  margin-top: 16px;&#13;
+  margin-bottom: 24px;&#13;
+  font-size: 16px;&#13;
+&#13;
+}&#13;
+&#13;
+.pp-right #hideScrollBar {&#13;
+  overflow: scroll;&#13;
+  width: 100%;&#13;
+}&#13;
+&#13;
+#hideScrollBar::-webkit-scrollbar {&#13;
+  display: none;&#13;
+}&#13;
+&#13;
+.pp-right .hidingScrollBar {&#13;
+  width: 100%;&#13;
+  height: auto;&#13;
+  margin-right: 14px;&#13;
+  padding-right: 28px;&#13;
+  /*This would hide the scroll bar of the right. To be sure we hide the scrollbar on every browser, increase this value*/&#13;
+  padding-bottom: 15px;&#13;
+  /*This would hide the scroll bar of the bottom if there is one*/&#13;
+}&#13;
+&#13;
+.pp-right .right-content-sub {&#13;
+  font-weight: 600;&#13;
+  margin-bottom: 0;&#13;
+}&#13;
+&#13;
+.vice-list .vice-mem-list {&#13;
+  display: flex;&#13;
+  justify-content: space-around;&#13;
+  margin-top: 12px;&#13;
+  height: 60%;&#13;
+}&#13;
+&#13;
+.pp-right .pp-right-content .vice-list {&#13;
+  height: 60%;&#13;
+}&#13;
+&#13;
+.vice-member {&#13;
+  text-align: center;&#13;
+}&#13;
+&#13;
+.vice-member img {&#13;
+  width: 120px;&#13;
+  height: 120px;&#13;
+  display: block;&#13;
+  margin-left: auto;&#13;
+  margin-right: auto;&#13;
+  margin-bottom: 8px;&#13;
+}&#13;
+&#13;
+.vice-member .vice-member-name,&#13;
+.vice-member .vice-member-email {&#13;
+  text-align: center;&#13;
+}&#13;
+&#13;
+.vice-member .vice-member-email {&#13;
+  font-size: 16px;&#13;
+}&#13;
+&#13;
+.vice-member:hover .vice-mem-img {&#13;
+  animation-name: rubberBand;&#13;
+  animation-duration: 0.8s;&#13;
+  cursor: pointer;&#13;
+}&#13;
+&#13;
+@keyframe rubberBand {&#13;
+  0% {&#13;
+    transform: scaleX(1);&#13;
+  }&#13;
+&#13;
+  ;&#13;
+&#13;
+  30% {&#13;
+    transform: scale3d(1.25, .75, 1);&#13;
+  }&#13;
+&#13;
+  30% {&#13;
+    transform: scale3d(1.25, .75, 1);&#13;
+  }&#13;
+&#13;
+  40% {&#13;
+    transform: scale3d(.75, 1.25, 1);&#13;
+  }&#13;
+&#13;
+  50% {&#13;
+    transform: scale3d(1.15, .85, 1);&#13;
+  }&#13;
+&#13;
+  65% {&#13;
+    transform: scale3d(.95, 1.05, 1);&#13;
+  }&#13;
+&#13;
+  75% {&#13;
+    transform: scale3d(1.05, .95, 1);&#13;
+  }&#13;
+&#13;
+  100% {&#13;
+    transform: scaleX(1);&#13;
+  }&#13;
+&#13;
+}&#13;
+&#13;
+.vice-member .vice-member-email {&#13;
+  text-decoration: none;&#13;
+  list-style-type: none;&#13;
+}&#13;
+&#13;
+.pop-up-button-list .pop-up-button {&#13;
+  height: 30px;&#13;
+  width: 30px;&#13;
+  font-size: 14px;&#13;
+  color: #fff;&#13;
+  border: none;&#13;
+  border-radius: 2px;&#13;
+  cursor: pointer;&#13;
+}&#13;
+&#13;
+.vice-nember .vice-member-email {&#13;
+  color: #37BE55;&#13;
+  text-decoration: none;&#13;
+  list-style-type: none;&#13;
+  cursor: pointer;&#13;
+}&#13;
+&#13;
+.pop-up-button-list #open-popup {&#13;
+  background-color: hsla(158, 95%, 34%, 1);&#13;
+}&#13;
+&#13;
+.pop-up-button-list #open-popup:hover .pop-main {&#13;
+  color: #5f249e;&#13;
+}&#13;
+&#13;
+.pop-up-button-list #close-popup {&#13;
+  background-color: hsla(360, 60%, 53%, 1);&#13;
+}&#13;
+&#13;
+// .cap-img {&#13;
+//   height: 9vw;&#13;
+//   width: 9vw;&#13;
+//   border-radius: 50%;&#13;
+//   border: 0.3rem solid black;&#13;
+//   transition: 0.3s;&#13;
+// }</css>
+        <data_table>sp_instance</data_table>
+        <demo_data/>
+        <description>"{{dataViceCap.avatar}}"</description>
+        <docs/>
+        <field_list/>
+        <has_preview>true</has_preview>
+        <id>cap_learning_path</id>
+        <internal>false</internal>
+        <link><![CDATA[function link(scope, element, attrs, controller) {
+  
+}]]></link>
+        <name>The Capability Learning Path</name>
+        <option_schema/>
+        <public>false</public>
+        <roles/>
+        <script><![CDATA[(function() {
+    /* populate the 'data' object */
+    /* e.g., data.table = $sp.getValue('table'); */
+   
+    if (input) {
+        var grCap = new GlideRecord('cmdb_ci_business_capability');
+        grCap.addQuery('u_full_name', input.name);
+        grCap.setLimit(1);
+        grCap.query();
+        if (grCap.next()) {
+            //var capData = {};
+            data.capSysID = grCap.x_292088_capabil_0_cap_lead.toString();
+            data.name = grCap.x_292088_capabil_0_cap_lead.getDisplayValue().toString();
+			data.biography = grCap.getValue('u_short_biography');
+			data.full_name = grCap.u_full_name.getDisplayValue();
+            data.email = grCap.x_292088_capabil_0_cap_lead.email.toString();
+            data.avatar = grCap.getDisplayValue('x_292088_capabil_0_cap_lead.avatar');
+            data.description = grCap.short_description.toString();
+            data.introduction = grCap.u_short_introduction.toString();
+			data.phone = grCap.x_292088_capabil_0_cap_lead.mobile_phone.toString();
+            data.learning_path = grCap.u_learning_path.toString();
+gs.info('check data learning path ' + data.learning_path);
+
+            var viceCap = grCap.x_292088_capabil_0_sub_leads.toString().split(',');
+			data.title = grCap.name.toString();
+			gs.info('check data' + viceCap);
+			data.viceData = [];
+            if (viceCap) {
+				for(var i = 0; i < viceCap.length; i++){
+					getViceCap(viceCap[i]);
+					gs.info('check data popup vice ' + getViceCap(viceCap[i]));
+				}
+                
+            }
+
+
+
+            if (!data.avatar) {
+                data.avatar = 'htran.png';
+            }
+            data.colorClass = input.color;
+            //data.capability.push();
+        }
+        gs.info('check data' + data.vice);
+
+    }
+
+    function getViceCap(sysid) {
+        var grVice = new GlideRecord('sys_user');
+        grVice.addQuery('sys_id', sysid);
+		grVice.setLimit(1);
+        grVice.query();
+        if (grVice.next()) {
+            var dataViceCap = {};
+            dataViceCap.name = grVice.name.toString();
+            dataViceCap.email = grVice.email.toString();
+			dataViceCap.avatar = grVice.getDisplayValue('avatar') || '';
+			gs.info('check data popup '+ dataViceCap);
+            data.viceData.push(dataViceCap);
+        }
+    }
+
+
+
+
+
+    data.widget_id = '';
+    var gr = new GlideRecord('sp_widget');
+    gr.addQuery('sys_id', gs.getProperty('x_292088_capabil_0.portal.capability.popup'));
+    gr.query();
+    if (gr.next()) {
+        data.widget_id = gr.id;
+    }
+})();]]></script>
+        <servicenow>false</servicenow>
+        <sys_class_name>sp_widget</sys_class_name>
+        <sys_created_by>DDOAN30</sys_created_by>
+        <sys_created_on>2023-07-20 06:00:43</sys_created_on>
+        <sys_id>94d0474707c879500eb2f61d7c1ed02c</sys_id>
+        <sys_mod_count>82</sys_mod_count>
+        <sys_name>The Capability Learning Path</sys_name>
+        <sys_package display_value="Capability" source="x_292088_capabil_0">dd08f9b007bc11500eb2f61d7c1ed0e9</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Capability">dd08f9b007bc11500eb2f61d7c1ed0e9</sys_scope>
+        <sys_update_name>sp_widget_94d0474707c879500eb2f61d7c1ed02c</sys_update_name>
+        <sys_updated_by>DDOAN30</sys_updated_by>
+        <sys_updated_on>2023-07-21 08:52:40</sys_updated_on>
+        <template><![CDATA[<div class="pop-main" ng-class="data.colorClass" id="show-hide">
+    <!-- <div class="pp-left">
+        <div class="pp-left-container" ng-class="capData.colorClass">
+            <div class="pp-left-img">
+                <img class='pp-left-img-detail animate__animated animate__bounceIn' src="{{data.avatar}}"
+                    alt="{{data.name}} Cap Lead">
+            </div>
+            <div class="pp-left-info">
+                <p class="info-name">{{data.name}}</p>
+               
+                <p class="info-email">
+                    <i class="fa-regular fa-envelope info-icon"></i>
+                    {{data.email}}
+                </p>
+                <p class="info-phone">
+                    <i class="fa-solid fa-phone info-icon"></i>
+                    {{data.phone}}
+                </p>
+                <div class="button-list">
+                    <a class="button-chat team-chat " href='https://teams.microsoft.com/l/chat/0/0?users={{data.email}}'
+                        target="_blank">
+                        <img class="team-chat animate__animated animate__tada" src="Microsoft Teams.png"
+                            alt="Team Chat">
+                        <div class="chat-title">Teams Chat</div>
+                    </a>
+                    <a class="button-chat outlook-chat" href="mailto: {{data.email}}">
+                        <img class="team-chat animate__animated animate__tada" src="Outlook.png" alt="Outlook">
+                        <div class="chat-title">Send Mail</div>
+                    </a>
+
+                </div>
+            </div>
+        </div>
+        <div class="pp-left-content content-text">
+            <div class="content-text">{{data.biography}}</div>
+           
+
+        </div>
+    </div> -->
+    <div class="pp-right" ng-class="capData.colorClass">
+        <div class="pp-right-header">
+            <div class="header-content">
+                <p class="header-content-tile">Captain</p>
+                <p>{{data.full_name}}</p>
+            </div>
+            <div class="close-bar">
+                <!-- <button>
+							<i class="bar-icon fa-solid fa-angle-left"></i>
+
+                        </button>
+                        <button>
+                            <i class="bar-icon fa-solid fa-angle-right"></i>
+
+                        </button>-->
+                <button id="close-popup" class="bar-icon-close" type="button" ng-click="c.closeWidget()">
+                    <i class="bar-icon fa-solid fa-xmark"></i>
+                    <!-- <i class="bar-icon ti-close"></i>-->
+                </button>
+            </div>
+        </div>
+        <div class="pp-right-content" id="hideScrollBar">
+            <p class="right-content-sub">About {{data.full_name}}</p>
+            <div class="right-content-text hidingScrollBar" ng-bind-html="c.trustHtml(data.learning_path)"></div>
+        </div>
+    </div>
+ <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+    <link rel="stylesheet" href="./themify-icons-font/themify-icons/themify-icons.css">
+<script src="https://kit.fontawesome.com/b9399ef343.js" crossorigin="anonymous"></script>]]></template>
+    </sp_widget>
+</record_update>
