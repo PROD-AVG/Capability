@@ -1,8 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?><record_update table="sys_ux_client_script">
     <sys_ux_client_script action="INSERT_OR_UPDATE">
+        <controller_preset/>
         <includes/>
         <macroponent display_value="Record Page(task)">50bf02b2aa8995904c8a0fc66e71246b</macroponent>
         <name>Home redirection</name>
+        <preset/>
         <required_translations>[ ]</required_translations>
         <script><![CDATA[/**
  * @param {params} params
@@ -34,6 +36,7 @@ function handler({
         <sys_update_name>sys_ux_client_script_9cbf02b2138995909c07893a5d743267</sys_update_name>
         <sys_updated_by>system</sys_updated_by>
         <sys_updated_on>2022-08-05 08:28:11</sys_updated_on>
+        <target>macroponent</target>
         <type/>
     </sys_ux_client_script>
 </record_update>

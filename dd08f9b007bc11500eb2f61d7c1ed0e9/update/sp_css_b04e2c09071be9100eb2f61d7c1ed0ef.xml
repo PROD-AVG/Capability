@@ -25,5 +25,6 @@
         <sys_update_name>sp_css_b04e2c09071be9100eb2f61d7c1ed0ef</sys_update_name>
         <sys_updated_by>HTRAN210</sys_updated_by>
         <sys_updated_on>2023-06-09 07:50:37</sys_updated_on>
+        <turn_off_scss_compilation>false</turn_off_scss_compilation>
     </sp_css>
 </record_update>

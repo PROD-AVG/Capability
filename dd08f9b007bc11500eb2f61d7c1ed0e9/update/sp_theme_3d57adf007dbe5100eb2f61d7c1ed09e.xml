@@ -103,5 +103,6 @@ $pre-bg: #f5f5f5;</css_variables>
         <sys_update_name>sp_theme_3d57adf007dbe5100eb2f61d7c1ed09e</sys_update_name>
         <sys_updated_by>DDOAN30</sys_updated_by>
         <sys_updated_on>2023-06-05 16:59:17</sys_updated_on>
+        <turn_off_scss_compilation>false</turn_off_scss_compilation>
     </sp_theme>
 </record_update>

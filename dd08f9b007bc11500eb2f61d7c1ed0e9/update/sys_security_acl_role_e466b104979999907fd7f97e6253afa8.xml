@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_security_acl_role">
+    <sys_security_acl_role action="INSERT_OR_UPDATE">
+        <sys_class_name>sys_security_acl_role</sys_class_name>
+        <sys_created_by>CPHAN20</sys_created_by>
+        <sys_created_on>2022-08-09 03:49:56</sys_created_on>
+        <sys_id>e466b104979999907fd7f97e6253afa8</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>1cbf02b2368995902222a4704b30436d.snc_internal</sys_name>
+        <sys_package display_value="Global" source="global">global</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Capability">dd08f9b007bc11500eb2f61d7c1ed0e9</sys_scope>
+        <sys_security_acl display_value="1cbf02b2368995902222a4704b30436d">90bf02b278899590f7abac9fe082036e</sys_security_acl>
+        <sys_update_name>sys_security_acl_role_e466b104979999907fd7f97e6253afa8</sys_update_name>
+        <sys_updated_by>CPHAN20</sys_updated_by>
+        <sys_updated_on>2022-08-09 03:49:56</sys_updated_on>
+        <sys_user_role display_value="snc_internal" name="snc_internal">7fcaa702933002009c8579b4f47ffbde</sys_user_role>
+        <transaction_id>f156fdc0979999907fd7f97e6253afe3</transaction_id>
+    </sys_security_acl_role>
+</record_update>

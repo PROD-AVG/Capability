@@ -8,6 +8,7 @@
         <container_class_name>cap-container</container_class_name>
         <name>Capability - Container 1</name>
         <order>1</order>
+        <semantic_tag/>
         <sp_page display_value="capability">7280177e074d95900eb2f61d7c1ed0b6</sp_page>
         <subheader>false</subheader>
         <sys_class_name>sp_container</sys_class_name>

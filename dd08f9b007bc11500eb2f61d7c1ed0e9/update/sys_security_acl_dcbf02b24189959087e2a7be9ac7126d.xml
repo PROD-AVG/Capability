@@ -5,9 +5,11 @@
         <advanced>false</advanced>
         <condition/>
         <description>ACL for Data broker: Content set evam broker - My Requests</description>
+        <local_or_existing>Local</local_or_existing>
         <name>d0bf02b2908995903e2f8418fd5a7e6e</name>
         <operation display_value="execute">execute</operation>
         <script/>
+        <security_attribute/>
         <sys_class_name>sys_security_acl</sys_class_name>
         <sys_created_by>system</sys_created_by>
         <sys_created_on>2022-08-05 08:28:13</sys_created_on>

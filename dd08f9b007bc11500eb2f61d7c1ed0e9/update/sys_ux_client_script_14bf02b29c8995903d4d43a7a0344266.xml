@@ -1,8 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?><record_update table="sys_ux_client_script">
     <sys_ux_client_script action="INSERT_OR_UPDATE">
+        <controller_preset/>
         <includes/>
         <macroponent display_value="Order success">d4bf02b29f899590cda534faec1b6167</macroponent>
         <name>View request redirection</name>
+        <preset/>
         <required_translations>[ ]</required_translations>
         <script><![CDATA[/**
  * @param {params} params
@@ -55,6 +57,7 @@ function handler({
         <sys_update_name>sys_ux_client_script_14bf02b29c8995903d4d43a7a0344266</sys_update_name>
         <sys_updated_by>system</sys_updated_by>
         <sys_updated_on>2022-08-05 08:28:14</sys_updated_on>
+        <target>macroponent</target>
         <type/>
     </sys_ux_client_script>
 </record_update>

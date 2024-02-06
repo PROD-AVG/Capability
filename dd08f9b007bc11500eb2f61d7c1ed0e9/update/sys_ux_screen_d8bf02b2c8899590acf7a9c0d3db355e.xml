@@ -3,6 +3,7 @@
         <active>true</active>
         <app_config display_value="Capability Config">73af02b2078995900eb2f61d7c1ed042</app_config>
         <description/>
+        <disable_auto_reflow>false</disable_auto_reflow>
         <event_mappings>[ ]</event_mappings>
         <macroponent display_value="Task rejected">9cbf02b24d899590d47acc7b366ad966</macroponent>
         <macroponent_config>{

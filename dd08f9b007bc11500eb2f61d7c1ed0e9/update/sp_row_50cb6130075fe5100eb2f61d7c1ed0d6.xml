@@ -2,6 +2,7 @@
     <sp_row action="INSERT_OR_UPDATE">
         <class_name>row-container-slider-main</class_name>
         <order>1</order>
+        <semantic_tag/>
         <sp_column/>
         <sp_container display_value="Avenger Capability - Container 2">274ba97c071fe5100eb2f61d7c1ed07a</sp_container>
         <sys_class_name>sp_row</sys_class_name>

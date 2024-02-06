@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?><record_update table="sys_ux_macroponent">
     <sys_ux_macroponent action="INSERT_OR_UPDATE">
         <associated_types/>
+        <bundles/>
         <category>page</category>
         <component_dependencies/>
         <composition>[ {&#13;
@@ -2675,8 +2676,11 @@
   },&#13;
   "readEvaluationMode" : "EAGER"&#13;
 } ]</data>
+        <description/>
         <dispatched_events>50bf02b2d689959040cf5eea12994461,10bf02b28f8995900e9a00dcc726c761</dispatched_events>
+        <ext_controller_dep/>
         <extends display_value="Page Template">19be392623033300f4b4c50947bf65ba</extends>
+        <extension_point/>
         <handled_events>98bf02b229899590e6963d20f069856a,dcbf02b23f899590563758320a38276a,d0bf02b25889959047e213d466a4a56b,d4bf02b20f89959093d24cb5f11a866b,18bf02b2cb8995901e1ce16cbcb1c46b</handled_events>
         <interactions/>
         <interfaces/>
@@ -2992,6 +2996,7 @@
 }</layout>
         <macroponent_dependencies/>
         <name>Landing Page</name>
+        <output_prop_mapping/>
         <props>[ {&#13;
   "name" : "refresh",&#13;
   "label" : "Refresh",&#13;

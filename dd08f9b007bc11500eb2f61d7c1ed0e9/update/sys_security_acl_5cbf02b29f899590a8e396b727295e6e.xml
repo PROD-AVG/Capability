@@ -5,9 +5,11 @@
         <advanced>false</advanced>
         <condition/>
         <description>ACL check for Request Item Data Broker</description>
+        <local_or_existing>Local</local_or_existing>
         <name>9cbf02b2018995909be7b9ac98c52c6e</name>
         <operation display_value="execute">execute</operation>
         <script/>
+        <security_attribute/>
         <sys_class_name>sys_security_acl</sys_class_name>
         <sys_created_by>system</sys_created_by>
         <sys_created_on>2022-08-05 08:28:15</sys_created_on>

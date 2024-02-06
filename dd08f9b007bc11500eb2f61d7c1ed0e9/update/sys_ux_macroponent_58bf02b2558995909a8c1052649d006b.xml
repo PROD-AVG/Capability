@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?><record_update table="sys_ux_macroponent">
     <sys_ux_macroponent action="INSERT_OR_UPDATE">
         <associated_types/>
+        <bundles/>
         <category>page</category>
         <component_dependencies/>
         <composition>[ {&#13;
@@ -805,8 +806,11 @@
   },&#13;
   "readEvaluationMode" : "EAGER"&#13;
 } ]</data>
+        <description/>
         <dispatched_events>d4bf02b2c0899590620e840ab292ae61,dcbf02b219899590a72f2a7220a4d861</dispatched_events>
+        <ext_controller_dep/>
         <extends display_value="Page Template">19be392623033300f4b4c50947bf65ba</extends>
+        <extension_point/>
         <handled_events>1cbf02b2dc899590c123e8b76ba4276b</handled_events>
         <interactions/>
         <interfaces/>
@@ -839,6 +843,7 @@
 }</layout>
         <macroponent_dependencies/>
         <name>Catalog Item Page</name>
+        <output_prop_mapping/>
         <props>[ {&#13;
   "name" : "bare",&#13;
   "label" : "bare",&#13;

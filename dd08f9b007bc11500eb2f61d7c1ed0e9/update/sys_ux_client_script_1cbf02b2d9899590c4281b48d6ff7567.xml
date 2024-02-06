@@ -1,8 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?><record_update table="sys_ux_client_script">
     <sys_ux_client_script action="INSERT_OR_UPDATE">
+        <controller_preset/>
         <includes/>
         <macroponent display_value="Landing Page">5cbf02b2828995902e8f909099ea746b</macroponent>
         <name>Launch approve alert </name>
+        <preset/>
         <required_translations>[ ]</required_translations>
         <script><![CDATA[/**
  * @param {params} params
@@ -32,6 +34,7 @@ function handler({api, event, helpers, imports}) {
         <sys_update_name>sys_ux_client_script_1cbf02b2d9899590c4281b48d6ff7567</sys_update_name>
         <sys_updated_by>system</sys_updated_by>
         <sys_updated_on>2022-08-05 08:28:18</sys_updated_on>
+        <target>macroponent</target>
         <type/>
     </sys_ux_client_script>
 </record_update>
